@@ -1,31 +1,81 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public float moveSpeed = 3;
-    public float leftRightSpeed = 4;
+    private CharacterController _charController;
+    //private Animator _animator;
+    
+    //move variables
+    public float moveSpeed = 3f;
+    public float leftRightSpeed = 9f;
+    public Vector3 v_movement;
+    public bool moveFlag = true;
+    private double flagCounter = 0;
+    //public float deviation = 0f;
+    public Vector3 RL;
+    
+    //Gravity
+    public float verticalVelocity;
+
+    public float gravity = 12.0f;
     // Start is called before the first frame update
+    void Start()
+    {
+        GameObject tempPlayer = GameObject.FindGameObjectWithTag("Player");
+        _charController = GetComponent<CharacterController> ();
+        
+        //_animator = tempPlayer.transform.GetChild(0).GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed, Space.World);
-
+        v_movement = _charController.transform.forward;
+        v_movement.y = verticalVelocity;
+       
+        RL = Vector3.Cross(v_movement, new Vector3(0f, 1f));
+       _charController.Move (v_movement * Time.deltaTime * moveSpeed);
+        flagCounter += Time.deltaTime;
+        if (_charController.isGrounded)
+        {
+            verticalVelocity = -0.5f;
+        }
+        else
+        {
+            verticalVelocity -= gravity * Time.deltaTime;
+        }
+    
+        if (flagCounter >= 0.3)
+        {
+            moveFlag = true;
+        }
         if (Input.GetKey(KeyCode.A))
         {
-            if (this.gameObject.transform.position.x > LevelBoundary.leftSide)
-            {
-                transform.Translate(Vector3.left * Time.deltaTime * leftRightSpeed);
-            }
+            _charController.transform.Translate(RL * Time.deltaTime * leftRightSpeed, Space.World);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            if (this.gameObject.transform.position.x < LevelBoundary.rightSide)
-            {
-                transform.Translate(Vector3.left * Time.deltaTime * leftRightSpeed * -1);
-            }
+            _charController.transform.Translate(RL * Time.deltaTime * leftRightSpeed* -1, Space.World);
         }
+        if ((Input.GetKey(KeyCode.LeftArrow)) && (v_movement.x > -1) && (moveFlag == true))
+        {
+            flagCounter = 0;
+            moveFlag = false;
+            _charController.transform.Rotate(new Vector3(0f, -90f, 0f));
+        }
+        if ((Input.GetKey(KeyCode.RightArrow)) && (v_movement.x < 1) && (moveFlag == true))
+        {
+            flagCounter = 0;
+            moveFlag = false;
+            _charController.transform.Rotate(new Vector3(0f, 90f, 0f));
+        }
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Debug.Log("Colision");
     }
 }
