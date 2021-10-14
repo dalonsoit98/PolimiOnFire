@@ -39,9 +39,17 @@ public class PlayerMove : MonoBehaviour
         RL = Vector3.Cross(v_movement, new Vector3(0f, 1f));
        _charController.Move (v_movement * Time.deltaTime * moveSpeed);
         flagCounter += Time.deltaTime;
+        
         if (_charController.isGrounded)
         {
-            verticalVelocity = -0.5f;
+            if (Input.GetKey(KeyCode.Space))
+            {
+                verticalVelocity = 4.5f;
+            }
+            else
+            {
+                verticalVelocity = -0.5f;
+            }
         }
         else
         {
