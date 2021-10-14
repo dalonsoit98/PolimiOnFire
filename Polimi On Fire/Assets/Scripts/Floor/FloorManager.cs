@@ -34,7 +34,7 @@ public class FloorManager : MonoBehaviour
     private void SpawnFloor (int prefabIndex = -1)
     {
         GameObject floor;
-        floor = Instantiate(FloorPrefabs [0]) as GameObject;
+        floor = Instantiate(FloorPrefabs[0]) as GameObject;
         floor.transform.SetParent(transform);
         gameObject.transform.position = new Vector3 (spawnX, spawnY, spawnZ);
         spawnZ += floorLength;
