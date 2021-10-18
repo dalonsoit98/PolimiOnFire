@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour
     //private Animator _animator;
     
     //move variables
-    public float moveSpeed = 3f;
+    public float moveSpeed = 6f;
     public float leftRightSpeed = 9f;
     public Vector3 v_movement;
     public bool moveFlag = true;
