@@ -15,8 +15,8 @@ public class FloorManager : MonoBehaviour
     private float spawnY = 0f;
     private float spawnZ = 0.0f;
     private float floorLength = 10.0f;
-    private int amountFloorOnScreen = 7;
-    private float safeZone = 35.0f;
+    private int amountFloorOnScreen = 9;
+    private float safeZone = 45.0f;
     private int lastPrefabIndex = 0;
     public int flagForward;
     public int flagLeft;
@@ -142,12 +142,12 @@ public class FloorManager : MonoBehaviour
             randomIndex = 0;
         }
 
-        if ((flagLeft == 1) && ((randomIndex == 3) || (randomIndex == 6)))
+        if ((flagLeft == 1) && ((randomIndex == 3) || (randomIndex == 4) || (randomIndex == 6)))
         {
             randomIndex = 0; 
         }
         
-        if ((flagRight == 1) && ((randomIndex == 4) || (randomIndex == 5)))
+        if ((flagRight == 1) && ((randomIndex == 3) || (randomIndex == 4) || (randomIndex == 5)))
         {
             randomIndex = 0;
         }

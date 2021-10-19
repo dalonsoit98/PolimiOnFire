@@ -14,8 +14,13 @@ public class MainCamera : MonoBehaviour
 
     private float _tempVar;
     public Vector3 v_movement;
-    public bool moveFlag = true;      
-    private double flagCounter = 0;  
+    public bool moveFlag = true;    
+    public int flagForward;
+    public int flagLeft;
+    public int flagRight;
+    private double flagCounter = 0;
+
+    public PlayerMove script;
     
     //Animacion
     private Vector3 moveVector;
@@ -27,12 +32,13 @@ public class MainCamera : MonoBehaviour
         offsetX = startOffset.x;
         offsetY = startOffset.y;
         offsetZ = startOffset.z;
+        flagForward = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        v_movement = lookAt.transform.forward;
+        v_movement = script.v_movement;
         startOffset.x = offsetX;
         startOffset.y = offsetY;
         startOffset.z = offsetZ;
@@ -49,22 +55,56 @@ public class MainCamera : MonoBehaviour
         }
         if ((Input.GetKey(KeyCode.LeftArrow)) && (v_movement.x > -1) && (moveFlag == true))
         {
-            transform.Rotate(0f, -90f ,0f);
-            _tempVar = offsetX;
-            offsetX = -offsetZ;
-            offsetZ = _tempVar;
-            flagCounter = 0; 
-            moveFlag = false;
+            switch (flagForward)
+            {
+              case  (0):
+                  transform.eulerAngles = new Vector3(15, 0, 0);
+                  //transform.Rotate(0f, -90f ,0f);
+                  _tempVar = offsetX;
+                  offsetX = -offsetZ;
+                  offsetZ = _tempVar;
+                  flagCounter = 0; 
+                  moveFlag = false;
+                  flagForward = 1;
+                  break;
+              case (1):
+                  transform.eulerAngles = new Vector3(15, 270, 0);
+                  //transform.Rotate(0f, -90f ,0f);
+                  _tempVar = offsetX;
+                  offsetX = -offsetZ;
+                  offsetZ = _tempVar;
+                  flagCounter = 0; 
+                  moveFlag = false;
+                  flagForward = 0;
+                  break;
+            }
         }
 
         if ((Input.GetKey(KeyCode.RightArrow)) && (v_movement.x < 1) && (moveFlag == true))
         {
-            transform.Rotate(0f, 90f ,0f);
-            _tempVar = offsetX;
-            offsetX = offsetZ;
-            offsetZ = -_tempVar;
-            flagCounter = 0;
-            moveFlag = false;
+            switch (flagForward)
+            {
+                case (0):
+                    transform.eulerAngles = new Vector3(15, 0, 0);
+                    //transform.Rotate(0f, 90f ,0f);
+                    _tempVar = offsetX;
+                    offsetX = offsetZ;
+                    offsetZ = -_tempVar;
+                    flagCounter = 0;
+                    moveFlag = false;
+                    flagForward = 1;
+                    break;
+                case (1):
+                    transform.eulerAngles = new Vector3(15, 90, 0);
+                    //transform.Rotate(0f, 90f ,0f);
+                    _tempVar = offsetX;
+                    offsetX = offsetZ;
+                    offsetZ = -_tempVar;
+                    flagCounter = 0;
+                    moveFlag = false;
+                    flagForward = 0;
+                    break;
+            }
         }
     }
 }

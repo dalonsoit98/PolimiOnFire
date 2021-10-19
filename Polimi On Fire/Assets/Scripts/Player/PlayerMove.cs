@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     private CharacterController _charController;
-    //private Animator _animator;
+    private Animator _animator;
     
     //move variables
     public float moveSpeed = 6f;
@@ -26,8 +26,8 @@ public class PlayerMove : MonoBehaviour
     {
         GameObject tempPlayer = GameObject.FindGameObjectWithTag("Player");
         _charController = GetComponent<CharacterController> ();
-        
-        //_animator = tempPlayer.transform.GetChild(0).GetComponent<Animator>();
+
+        _animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -44,7 +44,8 @@ public class PlayerMove : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Space))
             {
-                verticalVelocity = 4.5f;
+                StartCoroutine(Jump());
+                verticalVelocity = 3.5f;
             }
             else
             {
@@ -85,5 +86,11 @@ public class PlayerMove : MonoBehaviour
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         Debug.Log("Colision");
+    }
+
+    private IEnumerator Jump()
+    {
+        _animator.SetTrigger("JumpTrigger");
+        yield return new WaitForSeconds(3.0f);
     }
 }
