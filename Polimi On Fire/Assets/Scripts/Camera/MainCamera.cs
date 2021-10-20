@@ -11,13 +11,19 @@ public class MainCamera : MonoBehaviour
     private float offsetX;
     private float offsetY;
     private float offsetZ;
+    
+    // Smooth change
+    public Quaternion currentAngle;
+    Quaternion targetRight = Quaternion.Euler(15,90,0);
+    Quaternion targetLeft = Quaternion.Euler(15,270,0);
+    Quaternion targetFront = Quaternion.Euler(15,0,0);
+   // private Vector3 currentPosition;
+    private int direction;
 
     private float _tempVar;
     public Vector3 v_movement;
     public bool moveFlag = true;    
     public int flagForward;
-    public int flagLeft;
-    public int flagRight;
     private double flagCounter = 0;
 
     public PlayerMove script;
@@ -31,6 +37,9 @@ public class MainCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentAngle = targetFront;
+        direction = 0;
+        
         lookAt = GameObject.FindGameObjectWithTag("Player").transform;
         startOffset = transform.position - lookAt.position;
         offsetX = startOffset.x;
@@ -44,6 +53,8 @@ public class MainCamera : MonoBehaviour
     {
         if (isDead)
             return;
+
+       //transform.rotation = new Quaternion(0f,0f,0f,0f);
         
         v_movement = script.v_movement;
         startOffset.x = offsetX;
@@ -52,7 +63,7 @@ public class MainCamera : MonoBehaviour
         
         moveVector = lookAt.position + startOffset;
 
-        transform.position = moveVector;
+        //transform.position = moveVector;
            
         flagCounter += Time.deltaTime; 
         
@@ -65,24 +76,30 @@ public class MainCamera : MonoBehaviour
             switch (flagForward)
             {
               case  (0):
-                  transform.eulerAngles = new Vector3(15, 0, 0);
+                  direction = 0;
+                  /*transform.eulerAngles = new Vector3(15, 0, 0);
                   //transform.Rotate(0f, -90f ,0f);
+                  */
                   _tempVar = offsetX;
                   offsetX = -offsetZ;
                   offsetZ = _tempVar;
                   flagCounter = 0; 
                   moveFlag = false;
                   flagForward = 1;
+                  ChangeCurrentAngle();
                   break;
               case (1):
-                  transform.eulerAngles = new Vector3(15, 270, 0);
+                  direction = 1;
+                 /* transform.eulerAngles = new Vector3(15, 270, 0);
                   //transform.Rotate(0f, -90f ,0f);
+                  */
                   _tempVar = offsetX;
                   offsetX = -offsetZ;
                   offsetZ = _tempVar;
                   flagCounter = 0; 
                   moveFlag = false;
                   flagForward = 0;
+                  ChangeCurrentAngle();
                   break;
             }
         }
@@ -92,30 +109,56 @@ public class MainCamera : MonoBehaviour
             switch (flagForward)
             {
                 case (0):
-                    transform.eulerAngles = new Vector3(15, 0, 0);
-                    //transform.Rotate(0f, 90f ,0f);
+                    direction = 0;
+                    /*    transform.eulerAngles = new Vector3(15, 0, 0);
+                        //transform.Rotate(0f, 90f ,0f);
+                       */
                     _tempVar = offsetX;
                     offsetX = offsetZ;
                     offsetZ = -_tempVar;
                     flagCounter = 0;
                     moveFlag = false;
+                    
                     flagForward = 1;
+                    ChangeCurrentAngle();
                     break;
                 case (1):
-                    transform.eulerAngles = new Vector3(15, 90, 0);
+                    direction = 2;
+                    /*transform.eulerAngles = new Vector3(15, 90, 0);
                     //transform.Rotate(0f, 90f ,0f);
+                    */
                     _tempVar = offsetX;
                     offsetX = offsetZ;
                     offsetZ = -_tempVar;
                     flagCounter = 0;
                     moveFlag = false;
                     flagForward = 0;
+                    ChangeCurrentAngle();
                     break;
             }
         }
+
+        transform.position = Vector3.Lerp(transform.position, moveVector, 0.05f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, currentAngle, 0.05f);
     }
     public void OnDeath()
     {
         isDead = true;
+    }
+    
+    public void ChangeCurrentAngle()
+    {
+        switch (direction)
+        {
+            case 0:
+                currentAngle = targetFront;
+                break;
+            case 1:
+                currentAngle = targetLeft;
+                break;
+            case 2:
+                currentAngle = targetRight;
+                break;
+        }
     }
 }
