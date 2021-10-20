@@ -9,43 +9,52 @@ public class PlayerMove : MonoBehaviour
     private Animator _animator;
     
     //move variables
-    public float moveSpeed = 6f;
-    public float leftRightSpeed = 9f;
+    public float moveSpeed = 6.0f;
+    public float leftRightSpeed = 4f;
     public Vector3 v_movement;
     public bool moveFlag = true;
     private double flagCounter = 0;
+    private double flagJumpCounter = 0;
+    public float jumpSpeed = 3.5f;
     //public float deviation = 0f;
     public Vector3 RL;
     
     //Gravity
     public float verticalVelocity;
-
     public float gravity = 12.0f;
+    
+    // Death Control
+    public bool isDead;
     // Start is called before the first frame update
     void Start()
     {
         GameObject tempPlayer = GameObject.FindGameObjectWithTag("Player");
         _charController = GetComponent<CharacterController> ();
-
         _animator = GetComponentInChildren<Animator>();
+        isDead = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isDead)
+            return;
+        
         v_movement = _charController.transform.forward;
         v_movement.y = verticalVelocity;
        
         RL = Vector3.Cross(v_movement, new Vector3(0f, 1f));
        _charController.Move (v_movement * Time.deltaTime * moveSpeed);
         flagCounter += Time.deltaTime;
+        flagJumpCounter += Time.deltaTime;
         
         if (_charController.isGrounded)
         {
-            if (Input.GetKey(KeyCode.Space))
+            if ((Input.GetKey(KeyCode.Space) && (flagJumpCounter >= 1.0)))
             {
                 StartCoroutine(Jump());
-                verticalVelocity = 3.5f;
+                verticalVelocity = jumpSpeed;
+                flagJumpCounter = 0;
             }
             else
             {
@@ -85,12 +94,29 @@ public class PlayerMove : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        Debug.Log("Colision");
+        if ((hit.gameObject.tag == "Wall") || (hit.gameObject.tag == "Obstacle"))
+        {
+            Debug.Log("GameOver");
+            Death();
+        }
+    }
+
+    private void Death()
+    {
+        isDead = true;
+        GetComponent<Score>().OnDeath();
+        FindObjectOfType<MainCamera>().OnDeath();
     }
 
     private IEnumerator Jump()
     {
         _animator.SetTrigger("JumpTrigger");
         yield return new WaitForSeconds(3.0f);
+    }
+
+    public void SetSpeed(float modifier)
+    {
+        moveSpeed = 6.0f + modifier;
+        jumpSpeed = 3.5f - (float) (modifier * 0.2);
     }
 }

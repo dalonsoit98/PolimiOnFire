@@ -24,6 +24,10 @@ public class MainCamera : MonoBehaviour
     
     //Animacion
     private Vector3 moveVector;
+    
+    //Dead
+    private bool isDead = false;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +42,9 @@ public class MainCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isDead)
+            return;
+        
         v_movement = script.v_movement;
         startOffset.x = offsetX;
         startOffset.y = offsetY;
@@ -106,5 +113,9 @@ public class MainCamera : MonoBehaviour
                     break;
             }
         }
+    }
+    public void OnDeath()
+    {
+        isDead = true;
     }
 }
