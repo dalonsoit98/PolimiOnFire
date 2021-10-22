@@ -10,10 +10,15 @@ public class AudioManager : Singleton<AudioManager>
     public AudioSource SoundEffects;
 
     public AudioClip[] BackgroundMusicClips;
+
+    public AudioClip[] CoinSound;
+
+    public AudioClip[] CrashSound;
     // Start is called before the first frame update    
     void Start()
     {
-        
+        BackgroundMusic.clip = BackgroundMusicClips[0];
+        BackgroundMusic.Play();
     }
 
     // Update is called once per frame
