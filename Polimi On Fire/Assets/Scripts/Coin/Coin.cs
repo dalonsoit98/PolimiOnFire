@@ -26,5 +26,6 @@ public class Coin : MonoBehaviour
         }
         Destroy(gameObject);
         FindObjectOfType<Score>().ECTsUp();
+        FindObjectOfType<AudioManager>().Coins();
     }
 }

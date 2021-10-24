@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class AudioManager : Singleton<AudioManager>
 {
+    int counter = 0;
+    
     public AudioSource BackgroundMusic;
 
     public AudioSource SoundEffects;
@@ -24,6 +26,18 @@ public class AudioManager : Singleton<AudioManager>
     // Update is called once per frame
     void Update()
     {
-        
+        if ((FindObjectOfType<PlayerMove>().isDead) && (counter == 0))
+        {
+            BackgroundMusic.Stop();
+            SoundEffects.clip = CrashSound[0];
+            SoundEffects.Play();
+            counter += 1;
+        }
+    }
+
+    public void Coins()
+    {
+        SoundEffects.clip = CoinSound[0];
+        SoundEffects.Play();
     }
 }
