@@ -25,6 +25,8 @@ public class PlayerMove : MonoBehaviour
     
     // Death Control
     public bool isDead;
+    public bool isStarted;
+    public float startCountDown;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,13 +34,22 @@ public class PlayerMove : MonoBehaviour
         _charController = GetComponent<CharacterController> ();
         _animator = GetComponentInChildren<Animator>();
         isDead = false;
+        isStarted = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isDead)
+        if (isStarted == false)
+        {
+            StartRunning();
             return;
+        }
+        if (isDead)
+        {
+            DeathRunning();
+            return;
+        }
         
         v_movement = _charController.transform.forward;
         v_movement.y = verticalVelocity;
@@ -94,7 +105,7 @@ public class PlayerMove : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if ((hit.gameObject.tag == "Wall") || (hit.gameObject.tag == "Obstacle"))
+        if ((!isDead && ((hit.gameObject.tag == "Wall") || (hit.gameObject.tag == "Obstacle"))))
         {
             Debug.Log("GameOver");
             Death();
@@ -106,6 +117,7 @@ public class PlayerMove : MonoBehaviour
         isDead = true;
         GetComponent<Score>().OnDeath();
         FindObjectOfType<MainCamera>().OnDeath();
+        FindObjectOfType<AudioManager>().Death();
     }
 
     private IEnumerator Jump()
@@ -118,5 +130,29 @@ public class PlayerMove : MonoBehaviour
     {
         moveSpeed = 6.0f + modifier;
         jumpSpeed = 3.5f - (float) (modifier * 0.2);
+    }
+
+    private void StartRunning()
+    {
+       if (startCountDown > 3f){ 
+           FindObjectOfType<Score>().HasStarted();
+           _animator.SetTrigger("StartTrigger");
+            isStarted = true;
+       }
+       else
+       {
+           v_movement = _charController.transform.forward;
+           _charController.Move (v_movement * Time.deltaTime * moveSpeed * 0.01f);
+           startCountDown += Time.deltaTime;
+       }
+    }
+
+    private void DeathRunning()
+    {
+        v_movement.x = 0.0f;
+        v_movement.y -= gravity * Time.deltaTime;
+        v_movement.z = 0.0f;
+        _charController.Move (v_movement * Time.deltaTime * moveSpeed);
+       _animator.SetTrigger("DeathTrigger");
     }
 }

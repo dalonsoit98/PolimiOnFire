@@ -195,7 +195,17 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Dman_Spline_01SHJnt' has translation animation
+      that will be discarded.\n\t'Dman_Spline_02SHJnt' has translation animation
+      that will be discarded.\n\t'Dman_Spline_02SHJnt' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\t'Dman_Spline_TopSHJnt'
+      has translation animation that will be discarded.\n\t'Dman_head_TopSHJnt' has
+      translation animation that will be discarded.\n\t'Dman_l_Arm_ClavicleSHJnt'
+      has translation animation that will be discarded.\n\t'Dman_r_Arm_ClavicleSHJnt'
+      has translation animation that will be discarded.\n\t'Dman_r_Leg_BallSHJnt'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -220,7 +230,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -292,7 +302,7 @@ ModelImporter:
         weight: 1
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 0.96
     isReadable: 1
   meshes:
     lODScreenPercentages: []

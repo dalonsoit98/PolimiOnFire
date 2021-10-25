@@ -51,9 +51,9 @@ public class MainCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isDead)
+       /* if (isDead)
             return;
-
+       */
        //transform.rotation = new Quaternion(0f,0f,0f,0f);
         
         v_movement = script.v_movement;
@@ -71,7 +71,7 @@ public class MainCamera : MonoBehaviour
         {                          
             moveFlag = true;       
         }
-        if ((Input.GetKey(KeyCode.LeftArrow)) && (v_movement.x > -1) && (moveFlag == true))
+        if (((Input.GetKey(KeyCode.LeftArrow)) && (v_movement.x > -1) && (moveFlag == true)) && (!isDead))
         {
             switch (flagForward)
             {
@@ -104,7 +104,7 @@ public class MainCamera : MonoBehaviour
             }
         }
 
-        if ((Input.GetKey(KeyCode.RightArrow)) && (v_movement.x < 1) && (moveFlag == true))
+        if (((Input.GetKey(KeyCode.RightArrow)) && (v_movement.x < 1) && (moveFlag == true)) && (!isDead))
         {
             switch (flagForward)
             {

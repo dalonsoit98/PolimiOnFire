@@ -15,8 +15,8 @@ public class FloorManager : MonoBehaviour
     private float spawnY = 0f;
     private float spawnZ = 0.0f;
     private float floorLength = 10.0f;
-    private int amountFloorOnScreen = 20;
-    private float safeZone = 80.0f;
+    private int amountFloorOnScreen = 50;
+    private float safeZone = 200.0f;
     private int lastPrefabIndex = 0;
     public int flagForward;
     public int flagLeft;

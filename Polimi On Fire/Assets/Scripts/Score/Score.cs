@@ -17,6 +17,7 @@ public class Score : MonoBehaviour
     public Text ECTsText;
     
     private bool isDead = false;
+    private bool hasStarted = false;
 
     private void Start()
     {
@@ -26,7 +27,7 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isDead)
+        if (isDead || !hasStarted)
             return;
         
         if (score >= scoreToNextLevel)
@@ -45,6 +46,11 @@ public class Score : MonoBehaviour
         difficultyLevel++;
 
         GetComponent<PlayerMove>().SetSpeed (difficultyLevel);
+    }
+
+    public void HasStarted()
+    {
+        hasStarted = true;
     }
 
     public void OnDeath()
