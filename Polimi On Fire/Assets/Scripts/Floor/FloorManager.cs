@@ -45,6 +45,8 @@ public class FloorManager : MonoBehaviour
             }
             else
             {
+                if (i == 5)
+                    turnCounter = 6;
                 SpawnFloor();   
             }
         }
@@ -137,48 +139,54 @@ public class FloorManager : MonoBehaviour
         }
         lastPrefabIndex = randomIndex;
         
-        if ((turnCounter < 10) && ((randomIndex == 3) || (randomIndex == 4) || (randomIndex == 5) || (randomIndex == 6)))
+        // More probability of turn
+        if (turnCounter > 15)
+        {
+            randomIndex = Random.Range(3, 7);
+        }
+        
+        if ((turnCounter < 5) && ((randomIndex == 3) || (randomIndex == 4) || (randomIndex == 5) || (randomIndex == 6)))
         {
             randomIndex = 0;
         }
 
         if ((flagLeft == 1) && ((randomIndex == 3) || (randomIndex == 4) || (randomIndex == 6)))
         {
-            randomIndex = 0; 
+            randomIndex = 7; 
         }
         
         if ((flagRight == 1) && ((randomIndex == 3) || (randomIndex == 4) || (randomIndex == 5)))
         {
-            randomIndex = 0;
+            randomIndex = 6;
         }
         
         if ((flagForward == 1) && ((randomIndex == 5) || (randomIndex == 6)))
         {
             randomIndex = 0;
         }
-
-        if ((randomIndex == 3) && (turnCounter > 10))
+        
+        if ((randomIndex == 3) && (turnCounter > 5))
         {
             flagForward = 0;
             flagLeft = 1;
             flagRight = 0;
             turnCounter = 0;
         }
-        if ((randomIndex == 4) && (turnCounter > 10))
+        if ((randomIndex == 4) && (turnCounter > 5))
         {
             flagForward = 0;
             flagLeft = 0;
             flagRight = 1;
             turnCounter = 0;
         }
-        if ((randomIndex == 5) && (turnCounter > 10))
+        if ((randomIndex == 5) && (turnCounter > 5))
         {
             flagForward = 1;
             flagLeft = 0;
             flagRight = 0;
             turnCounter = 0;
         }
-        if ((randomIndex == 6) && (turnCounter > 10))
+        if ((randomIndex == 6) && (turnCounter > 5))
         {
             flagForward = 1;
             flagLeft = 0;
