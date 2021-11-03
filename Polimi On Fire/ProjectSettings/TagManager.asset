@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - Obstacle
+  - Turn
   layers:
   - Default
   - TransparentFX

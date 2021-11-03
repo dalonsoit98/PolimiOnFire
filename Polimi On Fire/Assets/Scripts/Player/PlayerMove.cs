@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
@@ -13,6 +14,7 @@ public class PlayerMove : MonoBehaviour
     public float leftRightSpeed = 4f;
     public Vector3 v_movement;
     public bool moveFlag = true;
+    public bool turnFlag = false;
     private double flagCounter = 0;
     private double flagJumpCounter = 0;
     public float jumpSpeed = 3.5f;
@@ -35,6 +37,7 @@ public class PlayerMove : MonoBehaviour
         _animator = GetComponentInChildren<Animator>();
         isDead = false;
         isStarted = false;
+        FindObjectOfType<CountdownScript>().CountdownFinished(false);
     }
 
     // Update is called once per frame
@@ -89,13 +92,13 @@ public class PlayerMove : MonoBehaviour
         {
             _charController.transform.Translate(RL * Time.deltaTime * leftRightSpeed* -1, Space.World);
         }
-        if ((Input.GetKey(KeyCode.LeftArrow)) && (v_movement.x > -1) && (moveFlag == true))
+        if ((Input.GetKey(KeyCode.LeftArrow)) && (v_movement.x > -1) && (moveFlag) && (turnFlag))
         {
             flagCounter = 0;
             moveFlag = false;
             _charController.transform.Rotate(new Vector3(0f, -90f, 0f));
         }
-        if ((Input.GetKey(KeyCode.RightArrow)) && (v_movement.x < 1) && (moveFlag == true))
+        if ((Input.GetKey(KeyCode.RightArrow)) && (v_movement.x < 1) && (moveFlag) && (turnFlag))
         {
             flagCounter = 0;
             moveFlag = false;
@@ -110,6 +113,7 @@ public class PlayerMove : MonoBehaviour
             Debug.Log("GameOver");
             Death();
         }
+        turnFlag = hit.gameObject.tag == "Turn";
     }
 
     private void Death()
@@ -134,10 +138,11 @@ public class PlayerMove : MonoBehaviour
 
     private void StartRunning()
     {
-       if (startCountDown > 3f){ 
+       if (startCountDown > 4f){ 
            FindObjectOfType<Score>().HasStarted();
            _animator.SetTrigger("StartTrigger");
             isStarted = true;
+            FindObjectOfType<CountdownScript>().CountdownFinished(true);
        }
        else
        {

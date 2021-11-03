@@ -71,7 +71,7 @@ public class MainCamera : MonoBehaviour
         {                          
             moveFlag = true;       
         }
-        if (((Input.GetKey(KeyCode.LeftArrow)) && (v_movement.x > -1) && (moveFlag == true)) && (!isDead))
+        if (((Input.GetKey(KeyCode.LeftArrow)) && (v_movement.x > -1) && (moveFlag)) && (!isDead) && (FindObjectOfType<PlayerMove>().turnFlag))
         {
             switch (flagForward)
             {
@@ -104,7 +104,7 @@ public class MainCamera : MonoBehaviour
             }
         }
 
-        if (((Input.GetKey(KeyCode.RightArrow)) && (v_movement.x < 1) && (moveFlag == true)) && (!isDead))
+        if (((Input.GetKey(KeyCode.RightArrow)) && (v_movement.x < 1) && (moveFlag)) && (!isDead) && (FindObjectOfType<PlayerMove>().turnFlag))
         {
             switch (flagForward)
             {
