@@ -24,4 +24,9 @@ public class MainMenu : MonoBehaviour
         {
             SceneManager.LoadScene("Credits");
         }
+
+     public void BuildScene()
+     {
+         SceneManager.LoadScene("Building1");
+     }
 }
