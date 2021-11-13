@@ -13,10 +13,10 @@ public class AudioManager : Singleton<AudioManager>
 
     public AudioClip[] CrashSound;
     // Start is called before the first frame update    
-    void Start()
+   void Start()
     {
-        BackgroundMusic.clip = BackgroundMusicClips[0];
-        BackgroundMusic.Play();
+        /*BackgroundMusic.clip = BackgroundMusicClips[0];
+        BackgroundMusic.Play();*/
     }
 
     // Update is called once per frame
@@ -36,5 +36,10 @@ public class AudioManager : Singleton<AudioManager>
         BackgroundMusic.Stop();
         SoundEffects.clip = CrashSound[0];
         SoundEffects.Play();
+    }
+    public void StartEndless()
+    {
+        BackgroundMusic.clip = BackgroundMusicClips[0];
+        BackgroundMusic.Play();
     }
 }

@@ -40,7 +40,7 @@ public class FireManager : MonoBehaviour
             return;
         }
 
-        if (numberOfFire > 60)
+        if (numberOfFire > 70)
         {
             DeleteFireCircle();
             numberOfFire = 1;
@@ -74,7 +74,7 @@ public class FireManager : MonoBehaviour
 
     private void DeleteFireCircle()
     {
-        for (int i = 0; i < numberOfFire/2; i++)
+        for (int i = 0; i < numberOfFire-2; i++)
         {
                 Destroy(activeFireCircle[0]);
                 activeFireCircle.RemoveAt(0);
@@ -89,7 +89,7 @@ public class FireManager : MonoBehaviour
         {
             fireObject  = Instantiate(fire);
 
-            float angle = i * (2 * Mathf.PI - Mathf.PI/ 2 / numberOfFire);
+            float angle = i * (2 * Mathf.PI / numberOfFire);
 
             float x = Mathf.Cos(angle) * radius;
             float z = Mathf.Sin(angle) * radius;
@@ -99,8 +99,8 @@ public class FireManager : MonoBehaviour
             
             activeFireCircle.Add(fireObject);
         }
-        radius += 2.5f;
-        numberOfFire *= 2;
+        radius += 0.7f;
+        numberOfFire += 2;
     }
 
     void SpawnFireAtRandom()

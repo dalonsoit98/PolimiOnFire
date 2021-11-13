@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +5,7 @@ public class Score : MonoBehaviour
 {
     private float score = 0.0f;
     private int ECTs = 0;
+    public int maxScore = 0;
 
     private int difficultyLevel = 1;
     private int maxDifficultyLevel = 5;
@@ -13,10 +13,11 @@ public class Score : MonoBehaviour
 
     public Text scoreText;
     public Text ECTsText;
-    
+
     private bool isDead = false;
     private bool hasStarted = false;
 
+    public DeathMenuScript deathMenu;
     private void Start()
     {
         ECTsText.text = ECTs.ToString() + " ECTs";
@@ -54,6 +55,12 @@ public class Score : MonoBehaviour
     public void OnDeath()
     {
         isDead = true;
+        deathMenu.ToogleEndMenu(score);
+       /* if (score > maxScore)
+        {
+            maxScore = ((int) score);
+            FindObjectOfType<MaxScoreScript>().maxScoreText.text = maxScore.ToString();
+        }*/
     }
 
     public void ECTsUp()

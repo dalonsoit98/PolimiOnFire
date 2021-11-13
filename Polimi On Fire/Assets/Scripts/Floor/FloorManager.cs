@@ -25,7 +25,7 @@ public class FloorManager : MonoBehaviour
     private List<GameObject> activeFloor;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         
@@ -34,7 +34,6 @@ public class FloorManager : MonoBehaviour
         flagRight = 0;
 
         turnCounter = 0;
-        
         activeFloor = new List<GameObject>();
         for (int i = 0; i < amountFloorOnScreen; i++)
         {
@@ -139,7 +138,7 @@ public class FloorManager : MonoBehaviour
         lastPrefabIndex = randomIndex;
         
         // More probability of turn
-        if (turnCounter > 15)
+        if (turnCounter > 25)
         {
             randomIndex = Random.Range(3, 7);
         }

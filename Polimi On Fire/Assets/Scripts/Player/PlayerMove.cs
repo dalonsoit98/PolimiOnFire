@@ -5,7 +5,7 @@ public class PlayerMove : MonoBehaviour
 {
     private CharacterController _charController;
     private Animator _animator;
-    
+
     //move variables
     public float moveSpeed = 6.0f;
     public float leftRightSpeed = 4f;
@@ -23,8 +23,8 @@ public class PlayerMove : MonoBehaviour
     public float gravity = 12.0f;
     
     // Death Control
-    public bool isDead;
-    public bool isStarted;
+    public bool isDead = false;
+    public bool isStarted = false;
     public float startCountDown;
     // Start is called before the first frame update
     void Start()
@@ -34,7 +34,10 @@ public class PlayerMove : MonoBehaviour
         _animator = GetComponentInChildren<Animator>();
         isDead = false;
         isStarted = false;
+        //FindObjectOfType<FloorManager>().Restart();
         FindObjectOfType<CountdownScript>().CountdownFinished(false);
+        FindObjectOfType<AudioManager>().StartEndless();
+        _charController.transform.position = Vector3.zero;
     }
 
     // Update is called once per frame
@@ -119,6 +122,7 @@ public class PlayerMove : MonoBehaviour
         GetComponent<Score>().OnDeath();
         FindObjectOfType<MainCamera>().OnDeath();
         FindObjectOfType<AudioManager>().Death();
+        isStarted = false;
     }
 
     private IEnumerator Jump()
