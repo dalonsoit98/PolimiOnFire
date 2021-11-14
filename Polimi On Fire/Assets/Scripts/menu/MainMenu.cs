@@ -29,4 +29,13 @@ public class MainMenu : MonoBehaviour
      {
          SceneManager.LoadScene("Building1");
      }
+     public void OptionsScene()
+     {
+        SceneManager.LoadScene("Options");
+     }
+
+     public void QuitGame()
+     {
+         Application.Quit();
+     }
 }
