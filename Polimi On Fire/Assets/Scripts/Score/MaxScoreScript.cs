@@ -7,7 +7,7 @@ public class MaxScoreScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MaxScoreUpdate();
+       
     }
 
     // Update is called once per frame
@@ -16,8 +16,12 @@ public class MaxScoreScript : MonoBehaviour
         
     }
 
-    public void MaxScoreUpdate()
+    public void MaxScoreUpdate(Text scoreText)
     {
-        return;
+        maxScoreText = scoreText;
+    }
+    void OnEnable()
+    {
+        maxScoreText.text  = PlayerPrefs.GetInt("maxScore").ToString();
     }
 }

@@ -5,6 +5,7 @@ public class PlayerMove : MonoBehaviour
 {
     private CharacterController _charController;
     private Animator _animator;
+    private CountdownScript countDownScript;
 
     //move variables
     public float moveSpeed = 6.0f;
@@ -35,7 +36,8 @@ public class PlayerMove : MonoBehaviour
         isDead = false;
         isStarted = false;
         //FindObjectOfType<FloorManager>().Restart();
-        FindObjectOfType<CountdownScript>().CountdownFinished(false);
+        countDownScript = FindObjectOfType<CountdownScript>();
+        countDownScript.CountdownFinished(false);
         FindObjectOfType<AudioManager>().StartEndless();
         _charController.transform.position = Vector3.zero;
     }
@@ -143,7 +145,7 @@ public class PlayerMove : MonoBehaviour
            FindObjectOfType<Score>().HasStarted();
            _animator.SetTrigger("StartTrigger");
             isStarted = true;
-            FindObjectOfType<CountdownScript>().CountdownFinished(true);
+            countDownScript.CountdownFinished(true);
        }
        else
        {

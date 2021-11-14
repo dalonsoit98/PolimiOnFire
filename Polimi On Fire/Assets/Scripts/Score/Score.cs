@@ -5,7 +5,7 @@ public class Score : MonoBehaviour
 {
     private float score = 0.0f;
     private int ECTs = 0;
-    public int maxScore = 0;
+    public int maxScore;
 
     private int difficultyLevel = 1;
     private int maxDifficultyLevel = 5;
@@ -55,17 +55,25 @@ public class Score : MonoBehaviour
     public void OnDeath()
     {
         isDead = true;
-        deathMenu.ToogleEndMenu(score);
-       /* if (score > maxScore)
+        if (score > maxScore)
         {
             maxScore = ((int) score);
-            FindObjectOfType<MaxScoreScript>().maxScoreText.text = maxScore.ToString();
-        }*/
+          //  FindObjectOfType<MaxScoreScript>().maxScoreText.text = maxScore.ToString();
+        }
+        deathMenu.ToogleEndMenu(maxScore);
     }
 
     public void ECTsUp()
     {
         ECTs += 1;
         ECTsText.text = ECTs.ToString() + " ECTs";
+    }
+    void OnDisable()
+    {
+        PlayerPrefs.SetInt("maxScore", maxScore);
+    }
+    void OnEnable()
+    {
+        maxScore  =  PlayerPrefs.GetInt("maxScore");
     }
 }
