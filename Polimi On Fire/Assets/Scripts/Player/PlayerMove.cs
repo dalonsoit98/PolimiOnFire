@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    
     private CharacterController _charController;
     private Animator _animator;
     private CountdownScript countDownScript;
@@ -27,9 +28,22 @@ public class PlayerMove : MonoBehaviour
     public bool isDead = false;
     public bool isStarted = false;
     public float startCountDown;
+    
+    //Skins
+    public GameObject player;
+    private int texId = 0;
+    public Object[] texturesPlayer;
+    private Renderer _rendererPlayer;
     // Start is called before the first frame update
     void Start()
     {
+        //Skin Load
+        _rendererPlayer = player.GetComponent<Renderer>();
+        string textPath = "Texture";
+        texturesPlayer = Resources.LoadAll(textPath, typeof(Texture2D));
+        _rendererPlayer.material.SetTexture("_MainTex", (Texture2D)texturesPlayer[texId]);
+        //Movement
+        
         GameObject tempPlayer = GameObject.FindGameObjectWithTag("Player");
         _charController = GetComponent<CharacterController> ();
         _animator = GetComponentInChildren<Animator>();
@@ -162,5 +176,10 @@ public class PlayerMove : MonoBehaviour
         v_movement.z = 0.0f;
         _charController.Move (v_movement * Time.deltaTime * moveSpeed);
        _animator.SetTrigger("DeathTrigger");
+    }
+
+    void OnEnable()
+    {
+        texId = PlayerPrefs.GetInt("textureId");
     }
 }

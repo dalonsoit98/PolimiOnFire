@@ -24,10 +24,21 @@ public class PlayerMoveBuilding : MonoBehaviour
     
     // Death Control
     public bool isDead;
-
+    
+    //Skins
+    public GameObject player;
+    private int texId = 0;
+    public Object[] texturesPlayer;
+    private Renderer _rendererPlayer;
     // Start is called before the first frame update
     void Start()
     {
+        //Skin Load
+        _rendererPlayer = player.GetComponent<Renderer>();
+        string textPath = "Texture";
+        texturesPlayer = Resources.LoadAll(textPath, typeof(Texture2D));
+        _rendererPlayer.material.SetTexture("_MainTex", (Texture2D)texturesPlayer[texId]);
+        //Move
         GameObject tempPlayer = GameObject.FindGameObjectWithTag("Player");
         _charController = GetComponent<CharacterController> ();
         _animator = GetComponentInChildren<Animator>();
@@ -145,6 +156,10 @@ public class PlayerMoveBuilding : MonoBehaviour
         v_movement.z = 0.0f;
         _charController.Move (v_movement * Time.deltaTime * moveSpeed);
        _animator.SetTrigger("DeathTrigger");
+    }
+    void OnEnable()
+    {
+        texId = PlayerPrefs.GetInt("textureId");
     }
 }
 

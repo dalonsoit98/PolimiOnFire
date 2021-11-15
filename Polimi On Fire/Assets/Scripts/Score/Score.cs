@@ -6,6 +6,7 @@ public class Score : MonoBehaviour
     private float score = 0.0f;
     private int ECTs = 0;
     public int maxScore;
+    private int totalECTS;
 
     private int difficultyLevel = 1;
     private int maxDifficultyLevel = 5;
@@ -55,6 +56,7 @@ public class Score : MonoBehaviour
     public void OnDeath()
     {
         isDead = true;
+        totalECTS += ECTs;
         if (score > maxScore)
         {
             maxScore = ((int) score);
@@ -71,9 +73,11 @@ public class Score : MonoBehaviour
     void OnDisable()
     {
         PlayerPrefs.SetInt("maxScore", maxScore);
+        PlayerPrefs.SetInt("totalECTS", totalECTS);
     }
     void OnEnable()
     {
-        maxScore  =  PlayerPrefs.GetInt("maxScore");
+        maxScore = PlayerPrefs.GetInt("maxScore");
+        totalECTS  =  PlayerPrefs.GetInt("totalECTS");
     }
 }

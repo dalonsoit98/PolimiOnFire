@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Volume.unity
     guid: 434723ec1ef6aae47bf344c47311ce7d
+  - enabled: 1
+    path: Assets/Scenes/Character.unity
+    guid: 41a7924f633e35b41ba5a598679686d5
   m_configObjects: {}

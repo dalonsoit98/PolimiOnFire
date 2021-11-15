@@ -33,6 +33,11 @@ public class MainMenu : MonoBehaviour
      {
         SceneManager.LoadScene("Options");
      }
+     
+     public void CharacterScene()
+     {
+         SceneManager.LoadScene("Character");
+     }
 
      public void QuitGame()
      {

@@ -44,7 +44,7 @@ public class FloorManager : MonoBehaviour
             else
             {
                 if (i == 5)
-                    turnCounter = 6;
+                    turnCounter = 20;
                 SpawnFloor();   
             }
         }
@@ -143,7 +143,7 @@ public class FloorManager : MonoBehaviour
             randomIndex = Random.Range(3, 7);
         }
         
-        if ((turnCounter < 5) && ((randomIndex == 3) || (randomIndex == 4) || (randomIndex == 5) || (randomIndex == 6)))
+        if ((turnCounter < 20) && ((randomIndex == 3) || (randomIndex == 4) || (randomIndex == 5) || (randomIndex == 6)))
         {
             randomIndex = 0;
         }
@@ -163,28 +163,28 @@ public class FloorManager : MonoBehaviour
             randomIndex = 0;
         }
         
-        if ((randomIndex == 3) && (turnCounter > 5))
+        if ((randomIndex == 3) && (turnCounter >= 20))
         {
             flagForward = 0;
             flagLeft = 1;
             flagRight = 0;
             turnCounter = 0;
         }
-        if ((randomIndex == 4) && (turnCounter > 5))
+        if ((randomIndex == 4) && (turnCounter >= 20))
         {
             flagForward = 0;
             flagLeft = 0;
             flagRight = 1;
             turnCounter = 0;
         }
-        if ((randomIndex == 5) && (turnCounter > 5))
+        if ((randomIndex == 5) && (turnCounter >= 20))
         {
             flagForward = 1;
             flagLeft = 0;
             flagRight = 0;
             turnCounter = 0;
         }
-        if ((randomIndex == 6) && (turnCounter > 5))
+        if ((randomIndex == 6) && (turnCounter >= 20))
         {
             flagForward = 1;
             flagLeft = 0;
