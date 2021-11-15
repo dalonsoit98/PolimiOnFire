@@ -1341,7 +1341,7 @@ MonoBehaviour:
   m_MinValue: -80
   m_MaxValue: 0
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: -0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1387,6 +1387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 10794d938680fe745a0197a3cd9bf5d2, type: 2}
+  VolumeSlider: {fileID: 2016287039}
 --- !u!4 &2105113725
 Transform:
   m_ObjectHideFlags: 0
