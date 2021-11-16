@@ -52,7 +52,7 @@ public class PlayerMove : MonoBehaviour
         //FindObjectOfType<FloorManager>().Restart();
         countDownScript = FindObjectOfType<CountdownScript>();
         countDownScript.CountdownFinished(false);
-        FindObjectOfType<AudioManager>().StartEndless();
+        FindObjectOfType<AudioManager>().StartCountdown();
         _charController.transform.position = Vector3.zero;
     }
 
@@ -67,6 +67,7 @@ public class PlayerMove : MonoBehaviour
         if (isDead)
         {
             DeathRunning();
+            FindObjectOfType<AudioManager>().MusicStop();
             return;
         }
         
@@ -137,8 +138,8 @@ public class PlayerMove : MonoBehaviour
         isDead = true;
         GetComponent<Score>().OnDeath();
         FindObjectOfType<MainCamera>().OnDeath();
-        FindObjectOfType<AudioManager>().Death();
         isStarted = false;
+        FindObjectOfType<AudioManager>().Death();
     }
 
     private IEnumerator Jump()
@@ -160,6 +161,7 @@ public class PlayerMove : MonoBehaviour
            _animator.SetTrigger("StartTrigger");
             isStarted = true;
             countDownScript.CountdownFinished(true);
+            FindObjectOfType<AudioManager>().StartEndless();
        }
        else
        {

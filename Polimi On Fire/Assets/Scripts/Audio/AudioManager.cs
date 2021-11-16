@@ -1,4 +1,5 @@
 
+
 using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class AudioManager : Singleton<AudioManager>
@@ -12,6 +13,10 @@ public class AudioManager : Singleton<AudioManager>
     public AudioClip[] CoinSound;
 
     public AudioClip[] CrashSound;
+    
+    public AudioClip[] StartSound;
+    
+    
     // Start is called before the first frame update    
    void Start()
     {
@@ -33,13 +38,25 @@ public class AudioManager : Singleton<AudioManager>
     
     public void Death()
     {
-        BackgroundMusic.Stop();
         SoundEffects.clip = CrashSound[0];
         SoundEffects.Play();
     }
+
+    public void MusicStop()
+    {
+        BackgroundMusic.Stop();
+    }
+
+    public void StartCountdown()
+    {
+        SoundEffects.clip = StartSound[0];
+        SoundEffects.Play();
+    }
+
     public void StartEndless()
     {
         BackgroundMusic.clip = BackgroundMusicClips[0];
         BackgroundMusic.Play();
     }
 }
+
