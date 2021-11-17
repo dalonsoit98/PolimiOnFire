@@ -11,7 +11,7 @@ public class FloorManager : MonoBehaviour
 
     private Transform playerTransform;
     private float spawnX = 0f;
-    private float spawnY = 0f;
+    private float spawnY = -0.5f;
     private float spawnZ = 0.0f;
     private float floorLength = 10.0f;
     private int amountFloorOnScreen = 50;

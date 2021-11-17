@@ -165,8 +165,8 @@ public class PlayerMove : MonoBehaviour
        }
        else
        {
-           v_movement = _charController.transform.forward;
-           _charController.Move (v_movement * Time.deltaTime * moveSpeed * 0.01f);
+           //v_movement = _charController.transform.forward;
+           //_charController.Move (v_movement * Time.deltaTime * moveSpeed * 0.01f);
            startCountDown += Time.deltaTime;
        }
     }

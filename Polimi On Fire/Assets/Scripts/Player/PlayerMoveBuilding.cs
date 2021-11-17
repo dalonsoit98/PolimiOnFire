@@ -34,10 +34,10 @@ public class PlayerMoveBuilding : MonoBehaviour
     void Start()
     {
         //Skin Load
-        _rendererPlayer = player.GetComponent<Renderer>();
+        //_rendererPlayer = player.GetComponent<Renderer>();
         string textPath = "Texture";
         texturesPlayer = Resources.LoadAll(textPath, typeof(Texture2D));
-        _rendererPlayer.material.SetTexture("_MainTex", (Texture2D)texturesPlayer[texId]);
+        player.transform.GetChild(0).GetChild(0).GetComponent<Renderer>().material.SetTexture("_MainTex", (Texture2D)texturesPlayer[texId]);
         //Move
         GameObject tempPlayer = GameObject.FindGameObjectWithTag("Player");
         _charController = GetComponent<CharacterController> ();

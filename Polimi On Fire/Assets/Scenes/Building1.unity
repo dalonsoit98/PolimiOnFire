@@ -355,6 +355,8 @@ MonoBehaviour:
   verticalVelocity: 0
   gravity: 12
   isDead: 0
+  player: {fileID: 549339633}
+  texturesPlayer: []
 --- !u!95 &549339636
 Animator:
   serializedVersion: 3
