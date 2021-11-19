@@ -43,8 +43,6 @@ public class FloorManager : MonoBehaviour
             }
             else
             {
-                if (i == 5)
-                    turnCounter = 20;
                 SpawnFloor();   
             }
         }

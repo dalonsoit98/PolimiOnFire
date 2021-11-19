@@ -6,6 +6,12 @@ public class PlayerMoveBuilding : MonoBehaviour
     private CharacterController _charController;
     private Animator _animator;
     
+    //Timer
+    [SerializeField] private TimerScript timer1;
+    
+    //Death Menu
+    public DeathMenuBuilding deathMenu;
+    
     //move variables
     public float moveSpeed = 6.0f;
     public float leftRightSpeed = 6f;
@@ -43,6 +49,13 @@ public class PlayerMoveBuilding : MonoBehaviour
         _charController = GetComponent<CharacterController> ();
         _animator = GetComponentInChildren<Animator>();
         isDead = false;
+        
+        //Timer
+        
+        timer1.SetDuration(80).Begin();
+        
+        //DeathMenu
+        
     }
 
     // Update is called once per frame
@@ -135,6 +148,7 @@ public class PlayerMoveBuilding : MonoBehaviour
         //GetComponent<Score>().OnDeath();
         FindObjectOfType<MainCameraBuilding1>().OnDeath();
         //FindObjectOfType<AudioManager>().Death();
+        deathMenu.ToogleEndMenu();
     }
 
     private IEnumerator Jump()
