@@ -2223,7 +2223,7 @@ MonoBehaviour:
   CrashSound:
   - {fileID: 8300000, guid: cabfae866cab347928b74b7d0ca6bfa9, type: 3}
   StartSound:
-  - {fileID: 8300000, guid: 2667a0a008b044e218b63df62e2be749, type: 3}
+  - {fileID: 8300000, guid: 6cb6498df3b00d24baf3c11b96151bc2, type: 3}
 --- !u!82 &1562946444
 AudioSource:
   m_ObjectHideFlags: 0

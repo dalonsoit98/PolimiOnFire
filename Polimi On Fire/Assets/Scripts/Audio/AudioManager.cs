@@ -16,6 +16,8 @@ public class AudioManager : Singleton<AudioManager>
     
     public AudioClip[] StartSound;
     
+    public AudioClip[] FireDeathSound;
+    
     
     // Start is called before the first frame update    
    void Start()
@@ -39,6 +41,12 @@ public class AudioManager : Singleton<AudioManager>
     public void Death()
     {
         SoundEffects.clip = CrashSound[0];
+        SoundEffects.Play();
+    }
+    
+    public void FireDeath()
+    {
+        SoundEffects.clip = FireDeathSound[0];
         SoundEffects.Play();
     }
 

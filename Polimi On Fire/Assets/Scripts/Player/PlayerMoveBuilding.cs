@@ -41,6 +41,7 @@ public class PlayerMoveBuilding : MonoBehaviour
     {
         //Skin Load
         //_rendererPlayer = player.GetComponent<Renderer>();
+        FindObjectOfType<AudioManager>().StartEndless();
         string textPath = "Texture";
         texturesPlayer = Resources.LoadAll(textPath, typeof(Texture2D));
         player.transform.GetChild(0).GetChild(0).GetComponent<Renderer>().material.SetTexture("_MainTex", (Texture2D)texturesPlayer[texId]);
@@ -63,6 +64,7 @@ public class PlayerMoveBuilding : MonoBehaviour
     {
         if (isDead)
         {
+            FindObjectOfType<AudioManager>().MusicStop();
             DeathRunning();
             return;
         }
@@ -149,6 +151,7 @@ public class PlayerMoveBuilding : MonoBehaviour
         FindObjectOfType<MainCameraBuilding1>().OnDeath();
         //FindObjectOfType<AudioManager>().Death();
         deathMenu.ToogleEndMenu();
+        FindObjectOfType<AudioManager>().FireDeath();
     }
 
     private IEnumerator Jump()
