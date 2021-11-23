@@ -18,6 +18,12 @@ public class AudioManager : Singleton<AudioManager>
     
     public AudioClip[] FireDeathSound;
     
+    public AudioClip[] ButtonSound;
+    
+    public AudioClip[] HoverSound;
+
+    public AudioClip[] VolumeSound;
+    
     
     // Start is called before the first frame update    
    void Start()
@@ -65,6 +71,24 @@ public class AudioManager : Singleton<AudioManager>
     {
         BackgroundMusic.clip = BackgroundMusicClips[0];
         BackgroundMusic.Play();
+        
+    }
+    public void ButtonPress()
+    {
+        SoundEffects.clip = ButtonSound[0];
+        SoundEffects.Play();
+    }
+    
+    public void ButtonHover()
+    {
+        SoundEffects.clip = HoverSound[0];
+        SoundEffects.Play();
+    }
+    
+    public void VolumeCheck()
+    {
+        SoundEffects.clip = VolumeSound[0];
+        SoundEffects.Play();
     }
 }
 

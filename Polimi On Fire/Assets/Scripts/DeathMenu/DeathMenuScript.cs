@@ -37,11 +37,13 @@ public class DeathMenuScript : MonoBehaviour
 
     public void PlayAgain()
     {
+        FindObjectOfType<AudioManager>().ButtonPress();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ToMenu()
     {
+        FindObjectOfType<AudioManager>().ButtonPress();
         SceneManager.LoadScene("ManinMenu");
     }
 }

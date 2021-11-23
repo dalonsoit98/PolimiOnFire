@@ -22,9 +22,11 @@ public class VolumeMenu : MonoBehaviour
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat("volume", volume);
+        FindObjectOfType<AudioManager>().VolumeCheck();
     }
     public void ToOptionsScene()
     {
+        FindObjectOfType<AudioManager>().ButtonPress();
         SceneManager.LoadScene("Options");
     }
     

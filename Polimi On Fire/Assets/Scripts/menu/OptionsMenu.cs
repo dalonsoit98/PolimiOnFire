@@ -8,15 +8,18 @@ public class OptionsMenu : MonoBehaviour
 
     public void CommandsScene()
     {
+        FindObjectOfType<AudioManager>().ButtonPress();
         SceneManager.LoadScene("CommandsMenu");
     }
     public void VolumeScene()
     {
+        FindObjectOfType<AudioManager>().ButtonPress();
         SceneManager.LoadScene("Volume");
     }
 
     public void ToMainScene()
     {
+        FindObjectOfType<AudioManager>().ButtonPress();
         SceneManager.LoadScene("ManinMenu");
     }
 }

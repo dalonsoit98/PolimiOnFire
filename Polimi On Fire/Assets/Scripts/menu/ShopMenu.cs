@@ -79,6 +79,7 @@ public class ShopMenu : MonoBehaviour
     {
         if (textureId != itemIndex)
         {
+            FindObjectOfType<AudioManager>().ButtonPress();
             textureId = itemIndex;
             useButton = ShopScrollView.GetChild(itemIndex).GetChild(4).GetComponent<Button>();
             useButton.interactable = false;
