@@ -41,7 +41,7 @@ public class PlayerMoveBuilding : MonoBehaviour
     {
         //Skin Load
         //_rendererPlayer = player.GetComponent<Renderer>();
-        FindObjectOfType<AudioManager>().StartEndless();
+        FindObjectOfType<AudioManager>().StartBuilding();
         string textPath = "Texture";
         texturesPlayer = Resources.LoadAll(textPath, typeof(Texture2D));
         player.transform.GetChild(0).GetChild(0).GetComponent<Renderer>().material.SetTexture("_MainTex", (Texture2D)texturesPlayer[texId]);

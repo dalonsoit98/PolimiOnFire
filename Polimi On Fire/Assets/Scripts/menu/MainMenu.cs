@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-public class MainMenu : MonoBehaviour, IPointerEnterHandler
+public class MainMenu : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,10 +16,6 @@ public class MainMenu : MonoBehaviour, IPointerEnterHandler
     void Update()
     {
         
-    }
-    
-    public void OnPointerEnter( PointerEventData ped ) {
-        FindObjectOfType<AudioManager>().Coins();
     }
 
     public void GameScene()
