@@ -30,6 +30,7 @@ public class CharacterMenu : MonoBehaviour
     }
     public void ToMainScene()
     {
+        FindObjectOfType<AudioManager>().ButtonPress();
         SceneManager.LoadScene("ManinMenu");
     }
 
@@ -44,6 +45,7 @@ public class CharacterMenu : MonoBehaviour
         {
             totalECTS -= price;
             ECTsText.text = totalECTS.ToString() + " ECTs";
+            FindObjectOfType<AudioManager>().Coins();
             return true;
         }
 

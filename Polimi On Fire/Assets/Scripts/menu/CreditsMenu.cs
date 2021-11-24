@@ -19,6 +19,7 @@ public class CreditsMenu : MonoBehaviour
 
     public void MainScene()
     {
+        FindObjectOfType<AudioManager>().ButtonPress();
         SceneManager.LoadScene("ManinMenu");
     }
 }
