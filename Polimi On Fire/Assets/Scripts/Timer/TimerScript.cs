@@ -57,6 +57,7 @@ public class TimerScript : MonoBehaviour
 
     public void End()
     {
+        FindObjectOfType<PlayerMoveBuilding>().timerDeath();
         ResetTimer();
     }
 

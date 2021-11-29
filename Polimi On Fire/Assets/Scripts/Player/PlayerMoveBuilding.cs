@@ -11,6 +11,9 @@ public class PlayerMoveBuilding : MonoBehaviour
     
     //Death Menu
     public DeathMenuBuilding deathMenu;
+    public CheckListScript checkListScript;
+    public TimerDeathScript timerDeathScript;
+    public FireDeath fireDeath;
     
     //move variables
     public float moveSpeed = 6.0f;
@@ -53,7 +56,7 @@ public class PlayerMoveBuilding : MonoBehaviour
         
         //Timer
         
-        timer1.SetDuration(80).Begin();
+        timer1.SetDuration(1200).Begin();
         
         //DeathMenu
         
@@ -151,6 +154,18 @@ public class PlayerMoveBuilding : MonoBehaviour
         FindObjectOfType<MainCameraBuilding1>().OnDeath();
         //FindObjectOfType<AudioManager>().Death();
         deathMenu.ToogleEndMenu();
+        fireDeath.ToggleFireDeath();
+        FindObjectOfType<AudioManager>().FireDeath();
+    }
+
+    public void timerDeath()
+    {
+        isDead = true;
+        //GetComponent<Score>().OnDeath();
+        FindObjectOfType<MainCameraBuilding1>().OnDeath();
+        //FindObjectOfType<AudioManager>().Death();
+        deathMenu.ToogleEndMenu();
+        timerDeathScript.ToggleTimerDeath();
         FindObjectOfType<AudioManager>().FireDeath();
     }
 
@@ -164,6 +179,11 @@ public class PlayerMoveBuilding : MonoBehaviour
     {
         moveSpeed = 6.0f + modifier;
         jumpSpeed = 3.5f - (float) (modifier * 0.2);
+    }
+
+    public void activateToggle(int id)
+    {
+        checkListScript.actionToggle(id);
     }
 
     private void DeathRunning()

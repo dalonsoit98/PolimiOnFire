@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 4499446491353221420}
   - component: {fileID: 8084728201990083634}
   - component: {fileID: 4467816454984275041}
+  - component: {fileID: 7338038162460198766}
   m_Layer: 0
   m_Name: 01_low
   m_TagString: Untagged
@@ -235,6 +236,20 @@ MonoBehaviour:
   ForwardDirection: 0
   SlideDirection: {x: 0, y: 0, z: -1}
   SlideAmount: 1.9
+--- !u!64 &7338038162460198766
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6400574025626943989}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2596774734982952093, guid: 5518466ac73c3b94e8f1765c6c455927, type: 3}
 --- !u!1 &9099975307852040687
 GameObject:
   m_ObjectHideFlags: 0
