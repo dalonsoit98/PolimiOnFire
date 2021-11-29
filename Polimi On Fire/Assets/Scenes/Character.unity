@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -878,7 +878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Content: {fileID: 787351857}
   m_Horizontal: 1
-  m_Vertical: 1
+  m_Vertical: 0
   m_MovementType: 1
   m_Elasticity: 0.1
   m_Inertia: 1
@@ -1128,8 +1128,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: -67.5}
-  m_SizeDelta: {x: -162, y: -621}
+  m_AnchoredPosition: {x: -0.00012207031, y: -67.5}
+  m_SizeDelta: {x: -0.00024414, y: -621}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &760006488
 MonoBehaviour:
@@ -1498,7 +1498,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1064217342
@@ -1662,8 +1662,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.34660527, y: 0}
   m_AnchorMax: {x: 0.6702389, y: 1}
-  m_AnchoredPosition: {x: -15, y: 0}
-  m_SizeDelta: {x: 1188, y: 0}
+  m_AnchoredPosition: {x: 4.3299866, y: 0}
+  m_SizeDelta: {x: 1378.68, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1171223724
 MonoBehaviour:
@@ -1735,6 +1735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BackgroundMusic: {fileID: 2086785069}
   SoundEffects: {fileID: 1392381383}
+  Fire: {fileID: 0}
   BackgroundMusicClips:
   - {fileID: 8300000, guid: 029b82b0b487dfe4283056a3227faba2, type: 3}
   - {fileID: 8300000, guid: 751b31dc85b73bf4ea6bc2d410296667, type: 3}
@@ -1753,6 +1754,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 407a31c25fe2fa0408d85d004bccca6b, type: 3}
   VolumeSound:
   - {fileID: 8300000, guid: 029b82b0b487dfe4283056a3227faba2, type: 3}
+  FireSounds: []
 --- !u!82 &1216948532
 AudioSource:
   m_ObjectHideFlags: 0
