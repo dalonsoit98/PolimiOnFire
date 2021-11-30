@@ -244,12 +244,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 6
-  leftRightSpeed: 9
+  leftRightSpeed: 7
   v_movement: {x: 0, y: 0, z: 0}
   moveFlag: 1
   turnFlag: 0
   jumpSpeed: 3.5
   RL: {x: 0, y: 0, z: 0}
+  AFlag: 1
+  DFlag: 1
   verticalVelocity: 0
   gravity: 12
   isDead: 0
@@ -287,7 +289,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 16a7ff9113ccf714f83e200332b45ee5, type: 3}
   m_Controller: {fileID: 9100000, guid: d3269579ba2a7bb4c834d960a25c767a, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -2404,6 +2406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BackgroundMusic: {fileID: 203339562}
   SoundEffects: {fileID: 214812042}
+  Fire: {fileID: 0}
   BackgroundMusicClips:
   - {fileID: 8300000, guid: 029b82b0b487dfe4283056a3227faba2, type: 3}
   - {fileID: 8300000, guid: 751b31dc85b73bf4ea6bc2d410296667, type: 3}
@@ -2422,6 +2425,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 407a31c25fe2fa0408d85d004bccca6b, type: 3}
   VolumeSound:
   - {fileID: 8300000, guid: 029b82b0b487dfe4283056a3227faba2, type: 3}
+  FireSounds: []
 --- !u!82 &1793309826
 AudioSource:
   m_ObjectHideFlags: 0

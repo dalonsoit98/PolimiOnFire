@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -19,7 +21,9 @@ public class PlayerMove : MonoBehaviour
     public float jumpSpeed = 3.5f;
     //public float deviation = 0f;
     public Vector3 RL;
-    
+    public bool AFlag = true;
+    public bool DFlag = true;
+
     //Gravity
     public float verticalVelocity;
     public float gravity = 12.0f;
@@ -54,6 +58,7 @@ public class PlayerMove : MonoBehaviour
         countDownScript.CountdownFinished(false);
         FindObjectOfType<AudioManager>().StartCountdown();
         _charController.transform.position = Vector3.zero;
+        
     }
 
     // Update is called once per frame
@@ -101,17 +106,17 @@ public class PlayerMove : MonoBehaviour
         {
             moveFlag = true;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) && AFlag)
         {
             _charController.transform.Translate(RL * Time.deltaTime * leftRightSpeed, Space.World);
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) && DFlag)
         {
             _charController.transform.Translate(RL * Time.deltaTime * leftRightSpeed* -1, Space.World);
         }
         if ((Input.GetKey(KeyCode.LeftArrow)) && (v_movement.x > -1) && (moveFlag) && (turnFlag))
         {
-            flagCounter = 0;
+            flagCounter = 0; 
             moveFlag = false;
             _charController.transform.Rotate(new Vector3(0f, -90f, 0f));
         }
