@@ -195,6 +195,68 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4af7da65169b48c47b3b86e7d6323744, type: 3}
+--- !u!1001 &6475637774556555807
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8412133691346155121}
+    m_Modifications:
+    - target: {fileID: -3851640287302642196, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711394468795392882, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
+      propertyPath: m_Name
+      value: Magic fire pro orange Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.011
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1845
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -3851640287302642196, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
 --- !u!1001 &6951054207703848362
 PrefabInstance:
   m_ObjectHideFlags: 0
