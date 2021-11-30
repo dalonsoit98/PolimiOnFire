@@ -8,6 +8,8 @@ TagManager:
   - Obstacle
   - Turn
   - Fire
+  - TriggerLeft
+  - TriggerRight
   layers:
   - Default
   - TransparentFX
