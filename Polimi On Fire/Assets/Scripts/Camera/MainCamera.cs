@@ -10,6 +10,8 @@ public class MainCamera : MonoBehaviour
     private float offsetX;
     private float offsetY;
     private float offsetZ;
+
+    public bool isPaused = false;
     
     // Smooth change
     public Quaternion currentAngle;
@@ -54,8 +56,11 @@ public class MainCamera : MonoBehaviour
             return;
        */
        //transform.rotation = new Quaternion(0f,0f,0f,0f);
-        
-        v_movement = script.v_movement;
+       if (isPaused)
+       {
+           return;
+       }
+       v_movement = script.v_movement;
         startOffset.x = offsetX;
         startOffset.y = offsetY;
         startOffset.z = offsetZ;
@@ -159,5 +164,9 @@ public class MainCamera : MonoBehaviour
                 currentAngle = targetRight;
                 break;
         }
+    }
+    public void PauseCamera()
+    {
+        isPaused = !isPaused;
     }
 }

@@ -9,10 +9,11 @@ public class PlayerMove : MonoBehaviour
     private CharacterController _charController;
     private Animator _animator;
     private CountdownScript countDownScript;
+    public PauseMenuEndless pauseMenu;
 
     //move variables
     public float moveSpeed = 6.0f;
-    public float leftRightSpeed = 4f;
+    public float leftRightSpeed = 9f;
     public Vector3 v_movement;
     public bool moveFlag = true;
     public bool turnFlag = false;
@@ -32,6 +33,9 @@ public class PlayerMove : MonoBehaviour
     public bool isDead = false;
     public bool isStarted = false;
     public float startCountDown;
+    
+    // pause control
+    public bool isPaused = false;
     
     //Skins
     public GameObject player;
@@ -76,6 +80,14 @@ public class PlayerMove : MonoBehaviour
             return;
         }
         
+        if (isPaused)
+        {
+            _animator.enabled = false;
+            return;
+        }
+        
+        _animator.enabled = true;
+        
         v_movement = _charController.transform.forward;
         v_movement.y = verticalVelocity;
        
@@ -105,6 +117,11 @@ public class PlayerMove : MonoBehaviour
         if (flagCounter >= 0.3)
         {
             moveFlag = true;
+        }
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Pause();
+            isPaused = true;
         }
         if (Input.GetKey(KeyCode.A) && AFlag)
         {
@@ -158,6 +175,14 @@ public class PlayerMove : MonoBehaviour
         moveSpeed = 6.0f + modifier;
         jumpSpeed = 3.5f - (float) (modifier * 0.2);
     }
+    
+    private void Pause()
+    {
+        isPaused = true;
+        //GetComponent<Score>().OnDeath();
+        //FindObjectOfType<AudioManager>().Death();
+        pauseMenu.TogglePauseMenu();
+    }
 
     private void StartRunning()
     {
@@ -189,4 +214,6 @@ public class PlayerMove : MonoBehaviour
     {
         texId = PlayerPrefs.GetInt("textureId");
     }
+    
+    
 }
