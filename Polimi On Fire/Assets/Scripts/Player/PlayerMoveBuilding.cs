@@ -1,4 +1,5 @@
 using System.Collections;
+using SD;
 using UnityEngine;
 
 public class PlayerMoveBuilding : MonoBehaviour
@@ -39,6 +40,9 @@ public class PlayerMoveBuilding : MonoBehaviour
     private int texId = 0;
     public Object[] texturesPlayer;
     private Renderer _rendererPlayer;
+    
+    //Npc
+    public NPCFollow npcFollow;
     // Start is called before the first frame update
     void Start()
     {
@@ -104,12 +108,14 @@ public class PlayerMoveBuilding : MonoBehaviour
         
         if (Input.GetKey(KeyCode.W))
         {
+            npcFollow.isPlayerAction = true;
             _charController.transform.Translate(v_movement * Time.deltaTime, Space.World);
             _animator.SetTrigger("RunTrigger");
             v_movement = _charController.transform.forward;
         }
         else
         {
+                npcFollow.isPlayerAction = false;
                 _animator.SetTrigger("IddleTrigger");
                 v_movement = new Vector3(0,0,0);
         }

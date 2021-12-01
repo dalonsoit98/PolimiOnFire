@@ -3852,7 +3852,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18.9274, y: 40.7}
+  m_AnchoredPosition: {x: 18.9274, y: 20.2}
   m_SizeDelta: {x: 105.1059, y: 21.9165}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &221608213
@@ -8016,6 +8016,7 @@ MonoBehaviour:
   isDead: 0
   player: {fileID: 549339633}
   texturesPlayer: []
+  npcFollow: {fileID: 1409679663}
 --- !u!95 &549339636
 Animator:
   serializedVersion: 3
@@ -8694,7 +8695,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18.9274, y: 25.6}
+  m_AnchoredPosition: {x: 18.9274, y: 4.3999996}
   m_SizeDelta: {x: 105.1059, y: 21.9165}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &588067608
@@ -18841,8 +18842,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -189.25, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -161.62305, y: -312.2467}
+  m_SizeDelta: {x: 173.756, y: 109.7893}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1226592051
 MonoBehaviour:
@@ -18864,7 +18865,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 1936aadc9e655a348ab698e0c4759365, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21764,6 +21765,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1265177029828767837, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
+      propertyPath: m_Center.y
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 1586523481853375397, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -21782,15 +21787,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1586523481853375397, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6452503
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 1586523481853375397, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.3
+      value: 0.050000012
       objectReference: {fileID: 0}
     - target: {fileID: 1586523481853375397, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.73
+      value: -16.11
       objectReference: {fileID: 0}
     - target: {fileID: 1586523481853375397, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -21824,8 +21829,73 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kiki-v2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2112089406245431583, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1265177029828767836, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
+--- !u!1 &1409679661 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2112089406245431583, guid: a41ab576c3b016540aed7505ecaf832f, type: 3}
+  m_PrefabInstance: {fileID: 1409679660}
+  m_PrefabAsset: {fileID: 0}
+--- !u!143 &1409679662
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409679661}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1.4
+  m_Radius: 0.2
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.6, z: 0}
+--- !u!114 &1409679663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409679661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 535df71c50c590543bbbd8946a7f56dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followPlayer: {fileID: 549339639}
+  walkSpeed: 4
+  runSpeed: 5
+  npcController: {fileID: 1409679662}
+  ctrlVelocity: {x: 0, y: 0, z: 0}
+  isPlayerRunning: 0
+  isPlayerIdle: 1
+  isPlayerAction: 0
+  npcPosition: 0
+  turnSpeed: 10
+  stopMoverment: 0
+--- !u!136 &1409679669
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409679661}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 1.4
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.6, z: 0}
 --- !u!1001 &1420934070
 PrefabInstance:
   m_ObjectHideFlags: 0

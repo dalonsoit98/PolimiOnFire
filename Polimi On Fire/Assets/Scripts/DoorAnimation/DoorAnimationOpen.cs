@@ -7,7 +7,7 @@ public class DoorAnimationOpen : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("NPC") )
         {
             if (!Door.IsOpen)
             {
@@ -18,7 +18,7 @@ public class DoorAnimationOpen : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("NPC") )
         {
             if (Door.IsOpen)
             {
