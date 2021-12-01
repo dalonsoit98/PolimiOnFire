@@ -10,7 +10,6 @@ public class PauseMenuBuilding : MonoBehaviour
     public PlayerMoveBuilding playerMoveBuilding;
     public TimerScript timer;
     public bool isShown = false;
-    private float transition = 0.0f;
     // Start is called before the first frame update
     void Start()
     {

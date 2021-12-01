@@ -9,7 +9,6 @@ public class PauseMenuEndless : MonoBehaviour
     public Image backgroundImg;
     public PlayerMove playerMove;
     public bool isShown = false;
-    private float transition = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
