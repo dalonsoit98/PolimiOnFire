@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 6
-  leftRightSpeed: 7
+  leftRightSpeed: 4
   v_movement: {x: 0, y: 0, z: 0}
   moveFlag: 1
   turnFlag: 0
