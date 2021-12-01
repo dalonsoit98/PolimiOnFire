@@ -12,6 +12,7 @@ public class PlayerMoveBuilding : MonoBehaviour
     
     //Death Menu
     public DeathMenuBuilding deathMenu;
+    public PauseMenuBuilding pauseMenu;
     public CheckListScript checkListScript;
     public TimerDeathScript timerDeathScript;
     public FireDeath fireDeath;
@@ -35,6 +36,9 @@ public class PlayerMoveBuilding : MonoBehaviour
     // Death Control
     public bool isDead;
     
+    // Pause Control
+    public bool isPaused;
+    
     //Skins
     public GameObject player;
     private int texId = 0;
@@ -57,6 +61,7 @@ public class PlayerMoveBuilding : MonoBehaviour
         _charController = GetComponent<CharacterController> ();
         _animator = GetComponentInChildren<Animator>();
         isDead = false;
+        isPaused = false;
         
         //Timer
         
@@ -75,6 +80,13 @@ public class PlayerMoveBuilding : MonoBehaviour
             DeathRunning();
             return;
         }
+        if (isPaused)
+        {
+            _animator.enabled = false;
+            return;
+        }
+
+        _animator.enabled = true;
         
         v_movement.y = verticalVelocity;
 
@@ -105,7 +117,11 @@ public class PlayerMoveBuilding : MonoBehaviour
         {
             moveFlag = true;
         }
-        
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Pause();
+            isPaused = true;
+        }
         if (Input.GetKey(KeyCode.W))
         {
             npcFollow.isPlayerAction = true;
@@ -162,6 +178,14 @@ public class PlayerMoveBuilding : MonoBehaviour
         deathMenu.ToogleEndMenu();
         fireDeath.ToggleFireDeath();
         FindObjectOfType<AudioManager>().FireDeath();
+    }
+    
+    private void Pause()
+    {
+        isPaused = true;
+        //GetComponent<Score>().OnDeath();
+        //FindObjectOfType<AudioManager>().Death();
+        pauseMenu.TogglePauseMenu();
     }
 
     public void timerDeath()

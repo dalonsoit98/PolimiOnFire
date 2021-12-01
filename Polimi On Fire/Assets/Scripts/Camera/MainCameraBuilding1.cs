@@ -19,6 +19,9 @@ public class MainCameraBuilding1 : MonoBehaviour
    // private Vector3 currentPosition;
     private int direction;
 
+    //pause
+    public bool isPaused = false;
+    
     private float _tempVar;
     public Vector3 v_movement;
     public bool moveFlag = true;    
@@ -54,8 +57,13 @@ public class MainCameraBuilding1 : MonoBehaviour
             return;
        */
        //transform.rotation = new Quaternion(0f,0f,0f,0f);
-        
-        v_movement = script.v_movement;
+
+       if (isPaused)
+       {
+           return;
+       }
+
+       v_movement = script.v_movement;
         startOffset.x = offsetX;
         startOffset.y = offsetY;
         startOffset.z = offsetZ;
@@ -193,6 +201,11 @@ public class MainCameraBuilding1 : MonoBehaviour
                 currentAngle = targetBack;
                 break;
         }
+    }
+
+    public void PauseCamera()
+    {
+        isPaused = !isPaused;
     }
 }
 

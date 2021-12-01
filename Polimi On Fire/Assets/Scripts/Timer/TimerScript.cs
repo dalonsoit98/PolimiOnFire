@@ -13,6 +13,8 @@ public class TimerScript : MonoBehaviour
 
     private int remainingDuration;
 
+    public bool isPaused = false;
+
     private void Awake()
     {
         ResetTimer();
@@ -42,6 +44,10 @@ public class TimerScript : MonoBehaviour
     {
         while (remainingDuration > 0)
         {
+            while (isPaused)
+            {
+                yield return null;
+            }
             UpdateUI(remainingDuration);
             remainingDuration--;
             yield return new WaitForSeconds(1f);
@@ -64,6 +70,11 @@ public class TimerScript : MonoBehaviour
     private void OnDestroy()
     {
         StopAllCoroutines();
+    }
+
+    public void PauseTimer()
+    {
+        isPaused = !isPaused;
     }
 
     // Start is called before the first frame update

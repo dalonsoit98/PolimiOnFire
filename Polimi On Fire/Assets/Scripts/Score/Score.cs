@@ -16,6 +16,7 @@ public class Score : MonoBehaviour
     public Text ECTsText;
 
     private bool isDead = false;
+    private bool isPaused = false;
     private bool hasStarted = false;
 
     public DeathMenuScript deathMenu;
@@ -29,7 +30,10 @@ public class Score : MonoBehaviour
     {
         if (isDead || !hasStarted)
             return;
-        
+        if (isPaused)
+        {
+            return;
+        }
         if (score >= scoreToNextLevel)
             LevelUp ();
         
@@ -69,6 +73,11 @@ public class Score : MonoBehaviour
     {
         ECTs += 1;
         ECTsText.text = ECTs.ToString() + " ECTs";
+    }
+
+    public void Pause()
+    {
+        isPaused = !isPaused;
     }
     void OnDisable()
     {
