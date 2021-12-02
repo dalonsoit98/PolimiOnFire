@@ -11,6 +11,7 @@ TagManager:
   - TriggerLeft
   - TriggerRight
   - NPC
+  - Link
   layers:
   - Default
   - TransparentFX

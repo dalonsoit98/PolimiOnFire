@@ -42,6 +42,8 @@ public class PlayerMoveBuilding : MonoBehaviour
     // Pause Dialog
     public bool isDialog;
     
+    // Pause at Win
+    public bool isWin;
     
     //Skins
     public GameObject player;
@@ -67,6 +69,7 @@ public class PlayerMoveBuilding : MonoBehaviour
         isDead = false;
         isPaused = false;
         isDialog =  false;
+        isWin = false;
         
         //Timer
         
@@ -79,6 +82,12 @@ public class PlayerMoveBuilding : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isWin)
+        {
+            FindObjectOfType<AudioManager>().MusicStop();
+            return;
+        }
+        
         if (isDead)
         {
             FindObjectOfType<AudioManager>().MusicStop();
