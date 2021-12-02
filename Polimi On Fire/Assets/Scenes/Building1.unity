@@ -11120,8 +11120,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 459677860}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.3685, y: -0, z: -10.6979}
-  m_LocalScale: {x: 1.2645746, y: 5, z: 14.65371}
+  m_LocalPosition: {x: 2.3685, y: -0.000000007449671, z: -10.572914}
+  m_LocalScale: {x: 1.2645746, y: 5, z: 14.678622}
   m_Children: []
   m_Father: {fileID: 118225560}
   m_RootOrder: 297
@@ -27490,8 +27490,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184605555}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -66.4089, y: 0, z: 41.650066}
-  m_LocalScale: {x: 4.2081265, y: 5, z: -4.0947585}
+  m_LocalPosition: {x: -66.6589, y: -0.000000014900593, z: 42.0205}
+  m_LocalScale: {x: 4.258203, y: 5, z: -4.144675}
   m_Children: []
   m_Father: {fileID: 118225560}
   m_RootOrder: 34
@@ -27586,8 +27586,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184635190}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -129.6266, y: -0.000000007451035, z: -5.8945923}
-  m_LocalScale: {x: 2.0748243, y: 5, z: 12.172185}
+  m_LocalPosition: {x: -129.6135, y: -0, z: -1.9818}
+  m_LocalScale: {x: 2.0773146, y: 5, z: 12.9544115}
   m_Children: []
   m_Father: {fileID: 118225560}
   m_RootOrder: 5
@@ -34869,8 +34869,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DeathMenuBuilding, Assembly-CSharp
+      - m_Target: {fileID: 1713436123}
+        m_TargetAssemblyTypeName: WinMenuScript, Assembly-CSharp
         m_MethodName: PlayAgain
         m_Mode: 1
         m_Arguments:
@@ -37389,8 +37389,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DeathMenuBuilding, Assembly-CSharp
+      - m_Target: {fileID: 1713436123}
+        m_TargetAssemblyTypeName: WinMenuScript, Assembly-CSharp
         m_MethodName: ToMenu
         m_Mode: 1
         m_Arguments:
@@ -39069,7 +39069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 273794692668120246, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.2792149
+      value: 3.5290911
       objectReference: {fileID: 0}
     - target: {fileID: 273794692668120246, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
       propertyPath: m_LocalScale.z
@@ -39081,7 +39081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 273794692668120246, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.039
+      value: 7.6639996
       objectReference: {fileID: 0}
     - target: {fileID: 273794692668120246, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
       propertyPath: m_LocalPosition.z
