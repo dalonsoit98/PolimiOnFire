@@ -13,13 +13,16 @@ public class DialogueGirlfriend : MonoBehaviour
     public Text dialogue;
     public string[] lines;
     public float textSpeed;
-
+    public PlayerMoveBuilding playerMoveBuilding;
+    public MainCameraBuilding1 mainCamera;
+    
     private int index;
 
     public bool dialogueStarted;
     
     void Start()
     {
+        dialogueStarted = false;
         dialogue.text = string.Empty;
         gameObject.SetActive(false);
     }
@@ -51,6 +54,8 @@ public class DialogueGirlfriend : MonoBehaviour
         gameObject.SetActive(true);
         dialogueStarted=true;
         index = 0;
+        playerMoveBuilding.isDialog = true;
+        mainCamera.isPaused = true;
         StartCoroutine(TypeLine());
     }
 
@@ -73,6 +78,8 @@ public class DialogueGirlfriend : MonoBehaviour
         }
         else
         {
+            playerMoveBuilding.isDialog = false;
+            mainCamera.isPaused = false;
             gameObject.SetActive(false);
         }
     }

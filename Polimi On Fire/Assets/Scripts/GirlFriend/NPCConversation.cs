@@ -12,14 +12,16 @@ public class NPCConversation : MonoBehaviour
     public bool isClose = false;
     public Transform followPlayer;
     public CharacterController npcController;
-    private DialogueGirlfriend dialogueStart;
-    private bool started = false;
+    public DialogueGirlfriend dialogueStart;
+    public NPCNavMesh npcNavMesh;
+    public CheckListScript checkList;
+    public bool started = false;
 
     public float npcPosition;
     // Start is called before the first frame update
     void Start()
     {
-        dialogueStart = FindObjectOfType<DialogueGirlfriend>();
+        started = false;
     }
 
     // Update is called once per frame
@@ -31,6 +33,8 @@ public class NPCConversation : MonoBehaviour
 
         if (isClose && Input.GetKey(KeyCode.E) && !started)
         {
+            checkList.actionToggle(1);
+            npcNavMesh.ToggleFollow();
             dialogueStart.StartDialogue();
             started = true;
         }

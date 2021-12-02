@@ -39,6 +39,10 @@ public class PlayerMoveBuilding : MonoBehaviour
     // Pause Control
     public bool isPaused;
     
+    // Pause Dialog
+    public bool isDialog;
+    
+    
     //Skins
     public GameObject player;
     private int texId = 0;
@@ -46,7 +50,7 @@ public class PlayerMoveBuilding : MonoBehaviour
     private Renderer _rendererPlayer;
     
     //Npc
-    public NPCFollow npcFollow;
+    //public NPCFollow npcFollow;
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +66,7 @@ public class PlayerMoveBuilding : MonoBehaviour
         _animator = GetComponentInChildren<Animator>();
         isDead = false;
         isPaused = false;
+        isDialog =  false;
         
         //Timer
         
@@ -80,6 +85,13 @@ public class PlayerMoveBuilding : MonoBehaviour
             DeathRunning();
             return;
         }
+        
+        if (isDialog)
+        {
+            _animator.enabled = false;
+            return;
+        }
+        
         if (isPaused)
         {
             _animator.enabled = false;
@@ -124,14 +136,14 @@ public class PlayerMoveBuilding : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.W))
         {
-            npcFollow.isPlayerAction = true;
+            //npcFollow.isPlayerAction = true;
             _charController.transform.Translate(v_movement * Time.deltaTime, Space.World);
             _animator.SetTrigger("RunTrigger");
             v_movement = _charController.transform.forward;
         }
         else
         {
-                npcFollow.isPlayerAction = false;
+                //npcFollow.isPlayerAction = false;
                 _animator.SetTrigger("IddleTrigger");
                 v_movement = new Vector3(0,0,0);
         }
