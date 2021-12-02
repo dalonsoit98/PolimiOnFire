@@ -30,7 +30,7 @@ public class WinningTrigger : MonoBehaviour
 
         isClose = (Math.Abs(distance) < 4);
 
-        if (isClose && Input.GetKey(KeyCode.E) && !started && fireAlarm.started && npcConversation.started && npcConversation.isClose)
+        if (isClose && !started && fireAlarm.started && npcConversation.started && npcConversation.isClose)
         {
             player.isWin = true;
             checkList.actionToggle(3);

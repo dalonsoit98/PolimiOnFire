@@ -29,7 +29,7 @@ public class NPCConversation : MonoBehaviour
     {
         npcPosition = Vector3.Distance(followPlayer.position, npcController.transform.position);
 
-        isClose = (Math.Abs(npcPosition) < 4);
+        isClose = (Math.Abs(npcPosition) < 5.5);
 
         if (isClose && Input.GetKey(KeyCode.E) && !started)
         {
