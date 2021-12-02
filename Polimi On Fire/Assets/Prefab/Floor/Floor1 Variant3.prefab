@@ -32,7 +32,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 4, z: 1.5}
   m_Children: []
   m_Father: {fileID: 6209654485442240822}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6735039856280401577
 MeshFilter:
@@ -235,7 +235,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 4, z: 1.5}
   m_Children: []
   m_Father: {fileID: 6209654485442240822}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3976206872999592580
 MeshFilter:
@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 6209654485442240822}
   - component: {fileID: 6209654485442240823}
   - component: {fileID: 6209654485442240712}
-  - component: {fileID: 6209654485442240713}
+  - component: {fileID: 4976598901695007383}
   m_Layer: 0
   m_Name: Floor1 Variant3
   m_TagString: Untagged
@@ -347,7 +347,6 @@ Transform:
   - {fileID: 4332498921232943654}
   - {fileID: 4376903359818944099}
   - {fileID: 5984341132180696439}
-  - {fileID: 347087716951003723}
   - {fileID: 8511006426579974615}
   - {fileID: 7318162119341798331}
   - {fileID: 6301699594590309032}
@@ -404,7 +403,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6209654485442240713
+--- !u!65 &4976598901695007383
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -449,7 +448,7 @@ Transform:
   m_LocalScale: {x: 0.58, y: 4, z: 1.5}
   m_Children: []
   m_Father: {fileID: 6209654485442240822}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6324651151159672695
 MeshFilter:
@@ -540,9 +539,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Magic fire pro orange Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7711394468795392882, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -955,77 +958,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5948520355590734930, guid: f19666d628662324191ece8d64784a6b, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8288094762739872460, guid: f19666d628662324191ece8d64784a6b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f19666d628662324191ece8d64784a6b, type: 3}
 --- !u!4 &5984341132180696439 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4517925259988616, guid: f19666d628662324191ece8d64784a6b, type: 3}
   m_PrefabInstance: {fileID: 5988850217252676607}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &8060446032735300405
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 6209654485442240822}
-    m_Modifications:
-    - target: {fileID: -3851640287302642196, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7711394468795392882, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
-      propertyPath: m_Name
-      value: Magic fire pro orange Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.093
-      objectReference: {fileID: 0}
-    - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: -3851640287302642196, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
---- !u!4 &347087716951003723 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
-  m_PrefabInstance: {fileID: 8060446032735300405}
   m_PrefabAsset: {fileID: 0}

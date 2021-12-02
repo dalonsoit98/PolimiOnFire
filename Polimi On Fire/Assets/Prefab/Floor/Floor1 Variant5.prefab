@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 7143886447465956073}
   - component: {fileID: 7143886447465956072}
   - component: {fileID: 7143886447465956119}
-  - component: {fileID: 7143886447465956118}
+  - component: {fileID: -4752367778949544765}
   m_Layer: 0
   m_Name: Floor1 Variant5
   m_TagString: Untagged
@@ -403,7 +403,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7143886447465956118
+--- !u!65 &-4752367778949544765
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -694,6 +694,10 @@ PrefabInstance:
     - target: {fileID: 7711394468795392882, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
       propertyPath: m_Name
       value: Magic fire pro orange Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711394468795392882, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 7713943256322603390, guid: cb53f166639f6824eb462838bbb097f1, type: 3}
       propertyPath: m_RootOrder
