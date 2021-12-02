@@ -32,7 +32,7 @@ public class MainMenu : MonoBehaviour
      public void BuildScene()
      {
          FindObjectOfType<AudioManager>().ButtonPress();
-         SceneManager.LoadScene("Building1");
+         SceneManager.LoadScene("BuildingMenu");
      }
      public void OptionsScene()
      {
