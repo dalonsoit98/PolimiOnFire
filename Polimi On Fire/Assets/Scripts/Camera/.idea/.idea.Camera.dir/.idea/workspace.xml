@@ -36,6 +36,7 @@
       <option name="presentableId" value="Default" />
       <updated>1638540664295</updated>
       <workItem from="1638540666444" duration="96000" />
+      <workItem from="1638543309946" duration="114000" />
     </task>
     <task id="LOCAL-00001" summary="fixed bugs in the map">
       <created>1638540748812</created>
@@ -44,18 +45,26 @@
       <option name="project" value="LOCAL" />
       <updated>1638540748812</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="bugs building 1">
+      <created>1638543344408</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1638543344408</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="fixed bugs in the map" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed bugs in the map" />
+    <MESSAGE value="bugs building 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugs building 1" />
   </component>
 </project>
