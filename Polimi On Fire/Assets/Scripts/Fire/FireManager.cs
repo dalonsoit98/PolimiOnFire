@@ -10,13 +10,13 @@ public class FireManager : MonoBehaviour
     private int numberOfFireRandom = 0;
     private float countFire;
     
-    private float spawnX = -100.0f;
+    private float spawnX = 33.25f;
     private float spawnY = 0f;
-    private float spawnZ = 25.0f;
+    private float spawnZ = -78.25f;
 
-    private float planeX = 100f;
+    private float planeX = 260f;
     private float planeY = 0f;
-    private float planeZ = 50f;
+    private float planeZ = 216f;
 
     //List of objects
     private List<GameObject> activeFireCircle;
@@ -40,7 +40,7 @@ public class FireManager : MonoBehaviour
             return;
         }
 
-        if (numberOfFire > 70)
+        if (numberOfFire > 80)
         {
             DeleteFireCircle();
             numberOfFire = 1;
@@ -61,7 +61,7 @@ public class FireManager : MonoBehaviour
             SpawnFireCircle();
             SpawnFireAtRandom();
             countFire = 0;
-            if (numberOfFireRandom > 10)
+            if (numberOfFireRandom > 35)
             {
                 DeleteFireRandom();
             }
@@ -99,7 +99,7 @@ public class FireManager : MonoBehaviour
             
             activeFireCircle.Add(fireObject);
         }
-        radius += 0.7f;
+        radius += 1.4f;
         numberOfFire += 2;
     }
 

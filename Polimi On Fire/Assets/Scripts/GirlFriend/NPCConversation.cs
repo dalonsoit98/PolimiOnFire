@@ -15,12 +15,14 @@ public class NPCConversation : MonoBehaviour
     public DialogueGirlfriend dialogueStart;
     public NPCNavMesh npcNavMesh;
     public CheckListScript checkList;
+    public Image pressE;
     public bool started = false;
 
     public float npcPosition;
     // Start is called before the first frame update
     void Start()
     {
+        pressE.gameObject.SetActive(false);
         started = false;
     }
 
@@ -30,9 +32,13 @@ public class NPCConversation : MonoBehaviour
         npcPosition = Vector3.Distance(followPlayer.position, npcController.transform.position);
 
         isClose = (Math.Abs(npcPosition) < 5.5);
-
+        if (isClose && !started)
+        {
+            pressE.gameObject.SetActive(true);
+        }
         if (isClose && Input.GetKey(KeyCode.E) && !started)
         {
+            pressE.gameObject.SetActive(false);
             checkList.actionToggle(1);
             npcNavMesh.ToggleFollow();
             dialogueStart.StartDialogue();

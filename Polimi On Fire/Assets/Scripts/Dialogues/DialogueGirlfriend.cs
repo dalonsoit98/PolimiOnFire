@@ -15,7 +15,7 @@ public class DialogueGirlfriend : MonoBehaviour
     public float textSpeed;
     public PlayerMoveBuilding playerMoveBuilding;
     public MainCameraBuilding1 mainCamera;
-    
+
     private int index;
 
     public bool dialogueStarted;

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WinningTrigger : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class WinningTrigger : MonoBehaviour
     public NPCConversation npcConversation;
     public WinMenuScript winMenu;
     public PlayerMoveBuilding player;
+    public Image waitForKiki;
     
     public float distance;
 
@@ -20,6 +22,7 @@ public class WinningTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        waitForKiki.gameObject.SetActive(false);
         started = false;
     }
 
@@ -30,8 +33,17 @@ public class WinningTrigger : MonoBehaviour
 
         isClose = (Math.Abs(distance) < 4);
 
+        if (isClose && !started && fireAlarm.started && npcConversation.started)
+        {
+            waitForKiki.gameObject.SetActive(true);
+        }
+        else
+        {
+            waitForKiki.gameObject.SetActive(false);
+        }
         if (isClose && !started && fireAlarm.started && npcConversation.started && npcConversation.isClose)
         {
+            waitForKiki.gameObject.SetActive(false);
             player.isWin = true;
             checkList.actionToggle(3);
             // Insertar Sonido?

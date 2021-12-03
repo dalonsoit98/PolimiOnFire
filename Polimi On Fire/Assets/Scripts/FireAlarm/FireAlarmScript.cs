@@ -2,13 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class FireAlarmScript : MonoBehaviour
 {
     public bool isClose = false;
     public Transform followPlayer;
     public CheckListScript checkList;
+    public Image pressE;
     
     public float distance;
 
@@ -25,9 +26,13 @@ public class FireAlarmScript : MonoBehaviour
         distance = Vector3.Distance(followPlayer.position, this.transform.position);
 
         isClose = (Math.Abs(distance) < 4);
-
+        if (isClose && !started)
+        {
+            pressE.gameObject.SetActive(true);
+        }
         if (isClose && Input.GetKey(KeyCode.E) && !started)
         {
+            pressE.gameObject.SetActive(false);
             checkList.actionToggle(2);
             // Insertar Sonido?
             started = true;

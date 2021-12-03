@@ -39,15 +39,15 @@ public class MainCameraBuilding1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentAngle = targetFront;
-        direction = 0;
+        currentAngle = targetRight;
+        direction = 2;
         
         lookAt = GameObject.FindGameObjectWithTag("Player").transform;
         startOffset = transform.position - lookAt.position;
         offsetX = startOffset.x;
         offsetY = startOffset.y;
         offsetZ = startOffset.z;
-        flagForward = 1;
+        flagForward = 0;
     }
 
     // Update is called once per frame
