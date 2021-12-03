@@ -20,7 +20,7 @@ public class BuildingMenu : MonoBehaviour
     public void Building1()
     {
         FindObjectOfType<AudioManager>().ButtonPress();
-        SceneManager.LoadScene("Building1");
+        SceneManager.LoadScene("StartBuilding1");
     }
     
     public void Building2()
