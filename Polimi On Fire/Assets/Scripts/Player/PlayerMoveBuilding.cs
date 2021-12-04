@@ -196,6 +196,7 @@ public class PlayerMoveBuilding : MonoBehaviour
         //GetComponent<Score>().OnDeath();
         FindObjectOfType<MainCameraBuilding1>().OnDeath();
         //FindObjectOfType<AudioManager>().Death();
+        timer1.PauseTimer();
         deathMenu.ToogleEndMenu();
         fireDeath.ToggleFireDeath();
         FindObjectOfType<AudioManager>().FireDeath();
