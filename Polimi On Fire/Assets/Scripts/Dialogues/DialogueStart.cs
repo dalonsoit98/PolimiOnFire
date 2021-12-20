@@ -13,7 +13,7 @@ public class DialogueStart : MonoBehaviour
     public Text dialogue;
     public string[] lines;
     public float textSpeed;
-    
+    private float Bounce = 0;
     private int index;
     
     // Start is called before the first frame update
@@ -21,13 +21,16 @@ public class DialogueStart : MonoBehaviour
     {
         dialogue.text = string.Empty;
         StartDialogue();
+        Bounce = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        Bounce += Time.deltaTime;
+        if (Input.GetKey(KeyCode.Return) && (Bounce > 0.2))
         {
+            Bounce = 0;
             if (dialogue.text == lines[index])
             {
                 NextLine();

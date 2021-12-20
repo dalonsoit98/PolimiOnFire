@@ -17,12 +17,12 @@ public class VolumeMenu : MonoBehaviour
     {
        audioMixer.GetFloat("volume",out volume);
        VolumeSlider.value = volume;
+       FindObjectOfType<AudioManager>().VolumeCheck();
     }
 
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat("volume", volume);
-        FindObjectOfType<AudioManager>().VolumeCheck();
     }
     public void ToOptionsScene()
     {

@@ -17,7 +17,7 @@ public class DialogueGirlfriend : MonoBehaviour
     public MainCameraBuilding1 mainCamera;
 
     private int index;
-
+    private float Bounce = 0;
     public bool dialogueStarted;
     
     void Start()
@@ -25,6 +25,7 @@ public class DialogueGirlfriend : MonoBehaviour
         dialogueStarted = false;
         dialogue.text = string.Empty;
         gameObject.SetActive(false);
+        Bounce = 0;
     }
 
     // Update is called once per frame
@@ -34,8 +35,11 @@ public class DialogueGirlfriend : MonoBehaviour
         {
             return;
         }
-        if (Input.GetMouseButtonDown(0))
+
+        Bounce += Time.deltaTime;
+        if (Input.GetKey(KeyCode.Return) && (Bounce > 0.2))
         {
+            Bounce = 0;
             if (dialogue.text == lines[index])
             {
                 NextLine();

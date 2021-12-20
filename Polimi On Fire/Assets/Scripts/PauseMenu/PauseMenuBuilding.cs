@@ -10,10 +10,16 @@ public class PauseMenuBuilding : MonoBehaviour
     public PlayerMoveBuilding playerMoveBuilding;
     public TimerScript timer;
     public bool isShown = false;
+    public GameObject ControlPanel;
+    public GameObject ResumeButton;
+    public GameObject ControlsButton;
+    public GameObject ToMenuButton;
+    public bool isShownControlers = false;
     // Start is called before the first frame update
     void Start()
     {
         gameObject.SetActive(false);
+        ControlPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -41,6 +47,23 @@ public class PauseMenuBuilding : MonoBehaviour
         playerMoveBuilding.isPaused = false;
         FindObjectOfType<MainCameraBuilding1>().PauseCamera();
         gameObject.SetActive(false);
+    }
+
+    public void Controls()
+    {
+        ControlPanel.SetActive(true);
+        ResumeButton.SetActive(false);
+        ControlsButton.SetActive(false);
+        ToMenuButton.SetActive(false);
+    }
+
+    public void toPauseMenu()
+    {
+        ControlPanel.SetActive(false);
+        gameObject.SetActive(true);
+        ResumeButton.SetActive(true);
+        ControlsButton.SetActive(true);
+        ToMenuButton.SetActive(true);
     }
 
     public void ToMenu()

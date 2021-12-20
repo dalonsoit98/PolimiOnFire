@@ -31,7 +31,7 @@ public class WinningTrigger : MonoBehaviour
     {
         distance = Vector3.Distance(followPlayer.position, this.transform.position);
 
-        isClose = (Math.Abs(distance) < 4);
+        isClose = (Math.Abs(distance) < 6);
 
         if (isClose && !started && fireAlarm.started && npcConversation.started)
         {

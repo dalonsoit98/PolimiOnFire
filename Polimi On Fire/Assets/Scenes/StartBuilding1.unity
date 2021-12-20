@@ -1275,7 +1275,7 @@ GameObject:
   - component: {fileID: 1827974652}
   - component: {fileID: 1827974651}
   m_Layer: 5
-  m_Name: LClick
+  m_Name: Enter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1320,7 +1320,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dbaade9504ea3464fb750eb8b4bd0e9e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 946e2322cf878484cacd132b2bca79fe, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

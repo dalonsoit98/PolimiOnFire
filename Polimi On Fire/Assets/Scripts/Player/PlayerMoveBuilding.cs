@@ -111,8 +111,8 @@ public class PlayerMoveBuilding : MonoBehaviour
         
         v_movement.y = verticalVelocity;
 
-        RL = Vector3.Cross(v_movement, new Vector3(0f, 1f));
-       _charController.Move (v_movement * Time.deltaTime * moveSpeed);
+        RL = Vector3.Cross(_charController.transform.forward, new Vector3(0f, 1f));
+       //_charController.Move (v_movement * Time.deltaTime * moveSpeed);
        flagCounter += Time.deltaTime;
         flagJumpCounter += Time.deltaTime;
         
@@ -122,16 +122,19 @@ public class PlayerMoveBuilding : MonoBehaviour
             {
                 StartCoroutine(Jump());
                 verticalVelocity = jumpSpeed;
+                v_movement.y = jumpSpeed;
                 flagJumpCounter = 0;
             }
             else
             {
                 verticalVelocity = -0.5f;
+                v_movement.y = -0.5f;
             }
         }
         else
         {
             verticalVelocity -= gravity * Time.deltaTime;
+            v_movement.y -= gravity * Time.deltaTime;
         }
     
         if (flagCounter >= 0.3)
@@ -146,23 +149,31 @@ public class PlayerMoveBuilding : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             //npcFollow.isPlayerAction = true;
-            _charController.transform.Translate(v_movement * Time.deltaTime, Space.World);
+            //_charController.transform.Translate(v_movement * Time.deltaTime, Space.World);
+            v_movement.y = verticalVelocity;
+            _charController.Move(v_movement * Time.deltaTime * moveSpeed);
             _animator.SetTrigger("RunTrigger");
             v_movement = _charController.transform.forward;
         }
-        else
-        {
-                //npcFollow.isPlayerAction = false;
-                _animator.SetTrigger("IddleTrigger");
-                v_movement = new Vector3(0,0,0);
-        }
         if (Input.GetKey(KeyCode.A))
         {
+            RL.y = v_movement.y * 0.75f;
             _charController.Move(RL * Time.deltaTime * leftRightSpeed);
+            _animator.SetTrigger("RunTrigger");
         }
         if (Input.GetKey(KeyCode.D))
         {
-            _charController.Move(RL * Time.deltaTime * -1 * leftRightSpeed);
+            RL *= -1;
+            RL.y = v_movement.y * 0.75f;
+            _charController.Move(RL * Time.deltaTime * leftRightSpeed);
+            _animator.SetTrigger("RunTrigger");
+        }
+        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        {
+            //npcFollow.isPlayerAction = false;
+            _animator.SetTrigger("IddleTrigger");
+            v_movement = new Vector3(0,v_movement.y,0);
+            _charController.Move(v_movement * Time.deltaTime * moveSpeed);
         }
         if ((Input.GetKey(KeyCode.LeftArrow)) && (moveFlag))
         {
