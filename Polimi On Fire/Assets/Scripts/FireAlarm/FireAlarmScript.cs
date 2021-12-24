@@ -10,13 +10,15 @@ public class FireAlarmScript : MonoBehaviour
     public Transform followPlayer;
     public CheckListScript checkList;
     public Image pressE;
-    
+    public GameObject fireAlarm;
+    public GameObject fireAlarm2;
     public float distance;
 
     public bool started;
     // Start is called before the first frame update
     void Start()
     {
+        fireAlarm2.SetActive(false);
         started = false;
     }
 
@@ -34,6 +36,8 @@ public class FireAlarmScript : MonoBehaviour
         {
             pressE.gameObject.SetActive(false);
             checkList.actionToggle(2);
+            fireAlarm.SetActive(false);
+            fireAlarm2.SetActive(true);
             // Insertar Sonido?
             started = true;
         }

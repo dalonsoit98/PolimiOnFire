@@ -9,7 +9,7 @@ public class Score : MonoBehaviour
     private int totalECTS;
 
     private int difficultyLevel = 1;
-    private int maxDifficultyLevel = 5;
+    private int maxDifficultyLevel = 15;
     private int scoreToNextLevel = 10;
 
     public Text scoreText;
@@ -46,7 +46,7 @@ public class Score : MonoBehaviour
         if (difficultyLevel == maxDifficultyLevel)
             return;
         
-        scoreToNextLevel *= 5;
+        scoreToNextLevel *= 2;
         difficultyLevel++;
 
         GetComponent<PlayerMove>().SetSpeed (difficultyLevel);

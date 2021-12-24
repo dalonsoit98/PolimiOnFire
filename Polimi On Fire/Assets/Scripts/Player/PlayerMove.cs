@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using Object = UnityEngine.Object;
 
 public class PlayerMove : MonoBehaviour
@@ -28,6 +29,7 @@ public class PlayerMove : MonoBehaviour
     //Gravity
     public float verticalVelocity;
     public float gravity = 12.0f;
+    public float jumpDelay = 1.0f;
     
     // Death Control
     public bool isDead = false;
@@ -98,7 +100,7 @@ public class PlayerMove : MonoBehaviour
         
         if (_charController.isGrounded)
         {
-            if ((Input.GetKey(KeyCode.Space) && (flagJumpCounter >= 1.0)))
+            if ((Input.GetKey(KeyCode.Space) && (flagJumpCounter >= jumpDelay)))
             {
                 StartCoroutine(Jump());
                 verticalVelocity = jumpSpeed;
@@ -173,7 +175,56 @@ public class PlayerMove : MonoBehaviour
     public void SetSpeed(float modifier)
     {
         moveSpeed = 6.0f + modifier;
-        jumpSpeed = 3.5f - (float) (modifier * 0.2);
+        switch (moveSpeed)
+        {
+            case 7:
+                jumpSpeed = 3.3f;
+                break;
+            case 8:
+                jumpSpeed = 3.1f;
+                break;
+            case 9:
+                jumpSpeed = 2.9f;
+                break;
+            case 10:
+                jumpSpeed = 2.85f;
+                break;
+            case 11:
+                jumpSpeed = 2.82f;
+                break;
+            case 12:
+                jumpSpeed = 2.6f;
+                break;
+            case 13:
+                jumpSpeed = 2.5f;
+                break;
+            case 14:
+                jumpSpeed = 2.4f;
+                break;
+            case 15:
+                jumpSpeed = 2.3f;
+                jumpDelay = 0.9f;
+                break;
+            case 16:
+                jumpSpeed = 2.2f;
+                break;
+            case 17:
+                jumpSpeed = 2.1f;
+                break;
+            case 18:
+                jumpSpeed = 2.0f;
+                break;
+            case 19:
+                jumpSpeed = 1.9f;
+                leftRightSpeed += 2;
+                break;
+            case 20:
+                jumpSpeed = 1.88f;
+                break;
+            case 21:
+                jumpSpeed = 1.85f;
+                break;
+        }
     }
     
     private void Pause()
