@@ -12,6 +12,9 @@ TagManager:
   - TriggerRight
   - NPC
   - Link
+  - TutorialA
+  - TurnRTutorial
+  - TurnLTutorial
   layers:
   - Default
   - TransparentFX

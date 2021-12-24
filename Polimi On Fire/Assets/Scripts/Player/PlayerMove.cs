@@ -44,6 +44,22 @@ public class PlayerMove : MonoBehaviour
     private int texId = 0;
     public Object[] texturesPlayer;
     private Renderer _rendererPlayer;
+    
+    //Tutorial
+    public GameObject pressA;
+    public GameObject pressR;
+    public GameObject pressL;
+    private float startXTutorial = -40f;
+    private float startYTutorial = 0f;
+    private float startZTutorial = -30f;
+    public bool isTutorial;
+    public bool isTutorialA;
+    public bool isTutorialR;
+    public bool isTutorialL;
+    public bool flagA = false;
+    public bool flagR = false;
+    public bool flagL = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,8 +79,14 @@ public class PlayerMove : MonoBehaviour
         countDownScript = FindObjectOfType<CountdownScript>();
         countDownScript.CountdownFinished(false);
         FindObjectOfType<AudioManager>().StartCountdown();
-        _charController.transform.position = Vector3.zero;
+        //_charController.transform.position = Vector3.zero;
         
+        //Tutorial
+        pressA.SetActive(false);
+        pressR.SetActive(false);
+        pressL.SetActive(false);
+        _charController.transform.position = new Vector3(startXTutorial, startYTutorial, startZTutorial);
+
     }
 
     // Update is called once per frame
@@ -81,7 +103,51 @@ public class PlayerMove : MonoBehaviour
             FindObjectOfType<AudioManager>().MusicStop();
             return;
         }
+
+        if (isTutorialA && !flagA)
+        {
+            pressA.SetActive(true);
+            _animator.enabled = false;
+            FindObjectOfType<Score>().isPaused = true;
+            if (Input.GetKey(KeyCode.A))
+            {
+                FindObjectOfType<Score>().isPaused = false;
+                _animator.enabled = true;
+                flagA = true;
+                pressA.SetActive(false);
+            }
+            return;
+        }
         
+        if (isTutorialR && !flagR)
+        {
+            pressR.SetActive(true);
+            _animator.enabled = false;
+            FindObjectOfType<Score>().isPaused = true;
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                FindObjectOfType<Score>().isPaused = false;
+                _animator.enabled = true;
+                flagR = true;
+                pressR.SetActive(false);
+            }
+            return;
+        }
+        
+        if (isTutorialL && !flagL)
+        {
+            pressL.SetActive(true);
+            _animator.enabled = false;
+            FindObjectOfType<Score>().isPaused = true;
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                FindObjectOfType<Score>().isPaused = false;
+                _animator.enabled = true;
+                flagL = true;
+                pressL.SetActive(false);
+            }
+            return;
+        }
         if (isPaused)
         {
             _animator.enabled = false;
@@ -89,6 +155,7 @@ public class PlayerMove : MonoBehaviour
         }
         
         _animator.enabled = true;
+        FindObjectOfType<Score>().isPaused = false;
         
         v_movement = _charController.transform.forward;
         v_movement.y = verticalVelocity;
@@ -154,7 +221,13 @@ public class PlayerMove : MonoBehaviour
             Debug.Log("GameOver");
             Death();
         }
-        turnFlag = hit.gameObject.tag == "Turn";
+
+        turnFlag = ((hit.gameObject.tag == "Turn") || (hit.gameObject.tag == "TurnRTutorial") ||
+                    (hit.gameObject.tag == "TurnLTutorial"));
+        
+        isTutorialA = hit.gameObject.tag == "TutorialA";
+        isTutorialR = hit.gameObject.tag == "TurnRTutorial";
+        isTutorialL = hit.gameObject.tag == "TurnLTutorial";
     }
 
     private void Death()

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +17,7 @@ public class Score : MonoBehaviour
     public Text ECTsText;
 
     private bool isDead = false;
-    private bool isPaused = false;
+    public bool isPaused = false;
     private bool hasStarted = false;
 
     public DeathMenuScript deathMenu;
@@ -46,7 +47,7 @@ public class Score : MonoBehaviour
         if (difficultyLevel == maxDifficultyLevel)
             return;
         
-        scoreToNextLevel *= 2;
+        scoreToNextLevel += 25;
         difficultyLevel++;
 
         GetComponent<PlayerMove>().SetSpeed (difficultyLevel);

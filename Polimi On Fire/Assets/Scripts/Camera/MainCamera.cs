@@ -7,9 +7,9 @@ public class MainCamera : MonoBehaviour
     private Transform lookAt;
     private Vector3 startOffset;
 
-    private float offsetX;
-    private float offsetY;
-    private float offsetZ;
+    private float offsetX = 0f;
+    private float offsetY = 2.87f;
+    private float offsetZ = -3.65f;
 
     public bool isPaused = false;
     
@@ -42,10 +42,9 @@ public class MainCamera : MonoBehaviour
         direction = 0;
         
         lookAt = GameObject.FindGameObjectWithTag("Player").transform;
-        startOffset = transform.position - lookAt.position;
-        offsetX = startOffset.x;
-        offsetY = startOffset.y;
-        offsetZ = startOffset.z;
+
+        gameObject.transform.position = lookAt.position + new Vector3(offsetX, offsetY, offsetZ);
+        
         flagForward = 1;
     }
 
@@ -75,7 +74,7 @@ public class MainCamera : MonoBehaviour
         {                          
             moveFlag = true;       
         }
-        if (((Input.GetKey(KeyCode.LeftArrow)) && (v_movement.x > -1) && (moveFlag)) && (!isDead) && (FindObjectOfType<PlayerMove>().turnFlag))
+        if (((Input.GetKey(KeyCode.LeftArrow)) && (v_movement.x > -1) && (moveFlag)) && (!isDead) && (FindObjectOfType<PlayerMove>().turnFlag) && !FindObjectOfType<PlayerMove>().isTutorialR)
         {
             switch (flagForward)
             {
@@ -108,7 +107,7 @@ public class MainCamera : MonoBehaviour
             }
         }
 
-        if (((Input.GetKey(KeyCode.RightArrow)) && (v_movement.x < 1) && (moveFlag)) && (!isDead) && (FindObjectOfType<PlayerMove>().turnFlag))
+        if (((Input.GetKey(KeyCode.RightArrow)) && (v_movement.x < 1) && (moveFlag)) && (!isDead) && (FindObjectOfType<PlayerMove>().turnFlag) && !FindObjectOfType<PlayerMove>().isTutorialL)
         {
             switch (flagForward)
             {
