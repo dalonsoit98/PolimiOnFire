@@ -6,6 +6,8 @@ public class AudioManager : Singleton<AudioManager>
 {
     public AudioSource BackgroundMusic;
 
+    public AudioSource AlarmSounds;
+    
     public AudioSource SoundEffects;
     
     public AudioSource Fire;
@@ -27,6 +29,8 @@ public class AudioManager : Singleton<AudioManager>
     public AudioClip[] VolumeSound;
     
     public AudioClip[] FireSounds;
+
+    public AudioClip[] AlarmSound;
     
     
     // Start is called before the first frame update    
@@ -69,6 +73,7 @@ public class AudioManager : Singleton<AudioManager>
     public void MusicStop()
     {
         BackgroundMusic.Stop();
+        AlarmSounds.Stop();
     }
 
     public void StartCountdown()
@@ -106,6 +111,12 @@ public class AudioManager : Singleton<AudioManager>
     {
         SoundEffects.clip = VolumeSound[0];
         SoundEffects.Play();
+    }
+
+    public void StartAlarm()
+    {
+        AlarmSounds.clip = AlarmSound[0];
+        AlarmSounds.Play();
     }
 }
 

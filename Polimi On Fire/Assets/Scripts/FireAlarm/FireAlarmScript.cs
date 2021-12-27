@@ -38,7 +38,7 @@ public class FireAlarmScript : MonoBehaviour
             checkList.actionToggle(2);
             fireAlarm.SetActive(false);
             fireAlarm2.SetActive(true);
-            // Insertar Sonido?
+            FindObjectOfType<AudioManager>().StartAlarm();
             started = true;
         }
     }
