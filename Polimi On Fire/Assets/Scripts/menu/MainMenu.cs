@@ -21,7 +21,7 @@ public class MainMenu : MonoBehaviour
     public void GameScene()
     {
         FindObjectOfType<AudioManager>().ButtonPress();
-        SceneManager.LoadScene("GameplayRun");
+        SceneManager.LoadScene("EndlessMenu");
     }
      public void CreditsScene()
         {
