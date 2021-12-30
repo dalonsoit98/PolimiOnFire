@@ -40,7 +40,7 @@ public class FireManager : MonoBehaviour
             return;
         }
 
-        if (numberOfFire > 80)
+        if (numberOfFire > 25)
         {
             DeleteFireCircle();
             numberOfFire = 1;
@@ -61,7 +61,7 @@ public class FireManager : MonoBehaviour
             SpawnFireCircle();
             SpawnFireAtRandom();
             countFire = 0;
-            if (numberOfFireRandom > 35)
+            if (numberOfFireRandom > 85)
             {
                 DeleteFireRandom();
             }
