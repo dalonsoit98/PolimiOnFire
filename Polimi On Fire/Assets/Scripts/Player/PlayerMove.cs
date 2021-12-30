@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using UnityEditor.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 using Object = UnityEngine.Object;
@@ -47,18 +48,25 @@ public class PlayerMove : MonoBehaviour
     
     //Tutorial
     public GameObject pressA;
+    public GameObject pressD;
     public GameObject pressR;
     public GameObject pressL;
+    public GameObject pressSpace;
     private float startXTutorial = -40f;
     private float startYTutorial = 0f;
-    private float startZTutorial = -30f;
+    private float startZTutorial = -40f;
     public bool isTutorial;
     public bool isTutorialA;
+    public bool isTutorialD;
     public bool isTutorialR;
     public bool isTutorialL;
+    public bool isTutorialSpace;
     public bool flagA = false;
+    public bool flagD = false;
     public bool flagR = false;
     public bool flagL = false;
+    public bool flagSpace = false;
+    public bool flagJump = true;
 
     // Start is called before the first frame update
     void Start()
@@ -79,14 +87,20 @@ public class PlayerMove : MonoBehaviour
         countDownScript = FindObjectOfType<CountdownScript>();
         countDownScript.CountdownFinished(false);
         FindObjectOfType<AudioManager>().StartCountdown();
-        //_charController.transform.position = Vector3.zero;
+        _charController.transform.position = Vector3.zero;
         
         //Tutorial
         pressA.SetActive(false);
+        pressD.SetActive(false);
+        pressSpace.SetActive(false);
         pressR.SetActive(false);
         pressL.SetActive(false);
-        _charController.transform.position = new Vector3(startXTutorial, startYTutorial, startZTutorial);
-
+        
+        if (isTutorial)
+        {
+            _charController.transform.position = new Vector3(startXTutorial, startYTutorial, startZTutorial);
+            flagJump = false;
+        }
     }
 
     // Update is called once per frame
@@ -115,6 +129,37 @@ public class PlayerMove : MonoBehaviour
                 _animator.enabled = true;
                 flagA = true;
                 pressA.SetActive(false);
+            }
+            return;
+        }
+        
+        if (isTutorialD && !flagD)
+        {
+            pressD.SetActive(true);
+            _animator.enabled = false;
+            FindObjectOfType<Score>().isPaused = true;
+            if (Input.GetKey(KeyCode.D))
+            {
+                FindObjectOfType<Score>().isPaused = false;
+                _animator.enabled = true;
+                flagD = true;
+                pressD.SetActive(false);
+            }
+            return;
+        }
+        
+        if (isTutorialSpace && !flagSpace)
+        {
+            pressSpace.SetActive(true);
+            _animator.enabled = false;
+            FindObjectOfType<Score>().isPaused = true;
+            if (Input.GetKey(KeyCode.Space))
+            {
+                FindObjectOfType<Score>().isPaused = false;
+                _animator.enabled = true;
+                flagSpace = true;
+                flagJump = true;
+                pressSpace.SetActive(false);
             }
             return;
         }
@@ -167,7 +212,7 @@ public class PlayerMove : MonoBehaviour
         
         if (_charController.isGrounded)
         {
-            if ((Input.GetKey(KeyCode.Space) && (flagJumpCounter >= jumpDelay)))
+            if ((Input.GetKey(KeyCode.Space) && (flagJumpCounter >= jumpDelay) && flagJump))
             {
                 StartCoroutine(Jump());
                 verticalVelocity = jumpSpeed;
@@ -183,7 +228,7 @@ public class PlayerMove : MonoBehaviour
             verticalVelocity -= gravity * Time.deltaTime;
         }
     
-        if (flagCounter >= 0.3)
+        if (flagCounter >= 2.0)
         {
             moveFlag = true;
         }
@@ -200,13 +245,13 @@ public class PlayerMove : MonoBehaviour
         {
             _charController.transform.Translate(RL * Time.deltaTime * leftRightSpeed* -1, Space.World);
         }
-        if ((Input.GetKey(KeyCode.LeftArrow)) && (v_movement.x > -1) && (moveFlag) && (turnFlag))
+        if ((Input.GetKey(KeyCode.LeftArrow)) && (v_movement.x > -1) && (moveFlag) && (turnFlag) && !isTutorialR)
         {
             flagCounter = 0; 
             moveFlag = false;
             _charController.transform.Rotate(new Vector3(0f, -90f, 0f));
         }
-        if ((Input.GetKey(KeyCode.RightArrow)) && (v_movement.x < 1) && (moveFlag) && (turnFlag))
+        if ((Input.GetKey(KeyCode.RightArrow)) && (v_movement.x < 1) && (moveFlag) && (turnFlag) && !isTutorialL)
         {
             flagCounter = 0;
             moveFlag = false;
@@ -226,8 +271,10 @@ public class PlayerMove : MonoBehaviour
                     (hit.gameObject.tag == "TurnLTutorial"));
         
         isTutorialA = hit.gameObject.tag == "TutorialA";
+        isTutorialD = hit.gameObject.tag == "TutorialD";
         isTutorialR = hit.gameObject.tag == "TurnRTutorial";
         isTutorialL = hit.gameObject.tag == "TurnLTutorial";
+        isTutorialSpace = hit.gameObject.tag == "TutorialSpace";
     }
 
     private void Death()
@@ -337,6 +384,7 @@ public class PlayerMove : MonoBehaviour
     void OnEnable()
     {
         texId = PlayerPrefs.GetInt("textureId");
+        isTutorial = PlayerPrefs.GetInt("TutorialFlag") == 1;
     }
     
     

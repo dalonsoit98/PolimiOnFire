@@ -8,6 +8,7 @@ public class DeathMenuScript : MonoBehaviour
     public Text scoreText;
     public Image backgroundImg;
     public bool isShown = false;
+    public int isTutorial;
 
     private float transition = 0.0f;
     // Start is called before the first frame update
@@ -38,6 +39,7 @@ public class DeathMenuScript : MonoBehaviour
     public void PlayAgain()
     {
         FindObjectOfType<AudioManager>().ButtonPress();
+        isTutorial = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -45,5 +47,10 @@ public class DeathMenuScript : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().ButtonPress();
         SceneManager.LoadScene("ManinMenu");
+    }
+    
+    void OnDisable()
+    {
+        PlayerPrefs.SetInt("TutorialFlag", isTutorial);
     }
 }

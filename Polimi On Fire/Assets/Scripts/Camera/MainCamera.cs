@@ -70,7 +70,7 @@ public class MainCamera : MonoBehaviour
            
         flagCounter += Time.deltaTime; 
         
-        if (flagCounter >= 0.3)    
+        if (flagCounter >= 2.0)    
         {                          
             moveFlag = true;       
         }
