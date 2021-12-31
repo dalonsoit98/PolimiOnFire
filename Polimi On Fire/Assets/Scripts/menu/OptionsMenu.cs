@@ -22,4 +22,9 @@ public class OptionsMenu : MonoBehaviour
         FindObjectOfType<AudioManager>().ButtonPress();
         SceneManager.LoadScene("ManinMenu");
     }
+ public void GraphicsScene()
+    {
+        FindObjectOfType<AudioManager>().ButtonPress();
+        SceneManager.LoadScene("Graphics");
+    }
 }
