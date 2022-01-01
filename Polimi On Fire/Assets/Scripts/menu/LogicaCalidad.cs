@@ -23,7 +23,7 @@ public class LogicaCalidad : MonoBehaviour
     }
     public void AjustarCalidad()
     {
-    QualitySettings.SetQualityLevel(dropdown.value);
+        QualitySettings.SetQualityLevel(dropdown.value);
         PlayerPrefs.SetInt("numeroDeCalidad", dropdown.value);
         calidad = dropdown.value;
     }
