@@ -17,6 +17,7 @@ TagManager:
   - TurnLTutorial
   - TutorialD
   - TutorialSpace
+  - opciones
   layers:
   - Default
   - TransparentFX
