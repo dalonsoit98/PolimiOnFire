@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class DialogueStart : MonoBehaviour
+public class DialogueStartBuilding1 : MonoBehaviour
 {
 
     public Text dialogue;

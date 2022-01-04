@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Building1.unity
     guid: 41595ac51b796644e8df12a172ca357b
   - enabled: 1
+    path: Assets/Scenes/Building2.unity
+    guid: 85569e1350589194288106c3e54f3e4d
+  - enabled: 1
+    path: Assets/Scenes/Building3.unity
+    guid: 4765a8876895eac498eace1a61d8d2ce
+  - enabled: 1
     path: Assets/Scenes/GameplayRun.unity
     guid: 4a4bb13c4fd7a4848a74ca36a7aef427
   - enabled: 1
@@ -42,6 +48,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StartBuilding1.unity
     guid: 5529b1828a7e2af4d9665cb707d39cd5
   - enabled: 1
-    path: Assets/Scenes/Building2.unity
-    guid: 85569e1350589194288106c3e54f3e4d
+    path: Assets/Scenes/StartBuilding3.unity
+    guid: ffadac563fa11d04ca98b4f8432ba053
+  - enabled: 1
+    path: Assets/Scenes/StartBuilding2.unity
+    guid: a8ee4aa60e246814fa89ec73bc0321d2
   m_configObjects: {}

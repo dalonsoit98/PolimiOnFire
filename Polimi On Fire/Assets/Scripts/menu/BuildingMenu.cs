@@ -26,13 +26,13 @@ public class BuildingMenu : MonoBehaviour
     public void Building2()
     {
         FindObjectOfType<AudioManager>().ButtonPress();
-        SceneManager.LoadScene("Building2");
+        SceneManager.LoadScene("StartBuilding2");
     }
     
     public void Building3()
     {
         FindObjectOfType<AudioManager>().ButtonPress();
-        SceneManager.LoadScene("Building3");
+        SceneManager.LoadScene("StartBuilding3");
     }
     
     public void Building4()
