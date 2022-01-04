@@ -151,7 +151,7 @@
 
 		#if UNITY_EDITOR
 		//Draws a Gizmo in the scene view window to show the Waypoints
-		public void OnDrawGizmosSelected(int radius) {
+		public void OnDrawGizmosSelected(float radius) {
 			for(var i = 0; i < waypointList.Length; i++){
 				if (waypointList [i] != null) {
 					if (waypointList [i].waypoint != null) {

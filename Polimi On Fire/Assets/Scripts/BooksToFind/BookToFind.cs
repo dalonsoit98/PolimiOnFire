@@ -35,13 +35,13 @@ public class BookToFind : MonoBehaviour
     {
         distance = Vector3.Distance(followPlayer.position, this.transform.position);
 
-        isClose = (Math.Abs(distance) < 1.5);
+        isClose = (Math.Abs(distance) < 1.8);
         if (isClose && !started)
         {
             pressE.gameObject.SetActive(true);
         }
 
-        if (!(bookScript1.isClose || bookScript2.isClose || bookScript2.isClose || bookScript2.isClose || bookScript2.isClose))
+        if (!(bookScript1.isClose || bookScript2.isClose || bookScript3.isClose || bookScript4.isClose || bookScript5.isClose))
         {
             pressE.gameObject.SetActive(false);
         }

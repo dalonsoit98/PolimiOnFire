@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMoveBuilding3 : MonoBehaviour
 {
     private CharacterController _charController;
-    private Animator _animator;
+    public Animator _animator;
     
     //Timer
     [SerializeField] private TimerScript timer1;
