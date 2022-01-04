@@ -35,7 +35,7 @@ public class BookToFind : MonoBehaviour
     {
         distance = Vector3.Distance(followPlayer.position, this.transform.position);
 
-        isClose = (Math.Abs(distance) < 1.8);
+        isClose = (Math.Abs(distance) < 2.5);
         if (isClose && !started)
         {
             pressE.gameObject.SetActive(true);
