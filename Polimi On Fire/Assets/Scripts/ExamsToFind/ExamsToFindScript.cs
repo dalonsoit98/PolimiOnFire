@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ExamsToFind : MonoBehaviour
+public class ExamsToFindScript : MonoBehaviour
 {
     
     public bool isClose = false;
@@ -14,11 +14,11 @@ public class ExamsToFind : MonoBehaviour
     public int id;
     public float distance;
     public GameObject book;
-    public ExamsToFind examScript1;
-    public ExamsToFind examScript2;
-    public ExamsToFind examScript3;
-    public ExamsToFind examScript4;
-    public ExamsToFind examScript5;
+    public ExamsToFindScript examScript1;
+    public ExamsToFindScript examScript2;
+    public ExamsToFindScript examScript3;
+    public PublishExamScript publishExam;
+    public ServerScript serverScript;
 
 
     public bool started;
@@ -35,13 +35,13 @@ public class ExamsToFind : MonoBehaviour
     {
         distance = Vector3.Distance(followPlayer.position, this.transform.position);
 
-        isClose = (Math.Abs(distance) < 1.8);
+        isClose = (Math.Abs(distance) < 2.8);
         if (isClose && !started)
         {
             pressE.gameObject.SetActive(true);
         }
 
-        if (!(examScript1.isClose || examScript2.isClose || examScript3.isClose || examScript4.isClose || examScript5.isClose))
+        if (!(examScript1.isClose || examScript2.isClose || examScript3.isClose || publishExam.isClose || serverScript.isClose))
         {
             pressE.gameObject.SetActive(false);
         }
