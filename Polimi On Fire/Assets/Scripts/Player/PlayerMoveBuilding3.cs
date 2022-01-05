@@ -49,7 +49,7 @@ public class PlayerMoveBuilding3 : MonoBehaviour
     public GameObject player;
     private int texId = 0;
     public Object[] texturesPlayer;
-    private Renderer _rendererPlayer;
+    
     
     //Npc
     //public NPCFollow npcFollow;
@@ -59,9 +59,7 @@ public class PlayerMoveBuilding3 : MonoBehaviour
         //Skin Load
         //_rendererPlayer = player.GetComponent<Renderer>();
         FindObjectOfType<AudioManager>().StartBuilding();
-        string textPath = "Texture";
-        texturesPlayer = Resources.LoadAll(textPath, typeof(Texture2D));
-        player.transform.GetChild(0).GetChild(0).GetComponent<Renderer>().material.SetTexture("_MainTex", (Texture2D)texturesPlayer[texId]);
+
         //Move
         GameObject tempPlayer = GameObject.FindGameObjectWithTag("Player");
         _charController = GetComponent<CharacterController> ();
@@ -205,7 +203,7 @@ public class PlayerMoveBuilding3 : MonoBehaviour
     {
         isDead = true;
         //GetComponent<Score>().OnDeath();
-        FindObjectOfType<MainCameraBuilding2>().OnDeath();
+        FindObjectOfType<MainCameraBuilding3>().OnDeath();
         //FindObjectOfType<AudioManager>().Death();
         timer1.PauseTimer();
         deathMenu.ToogleEndMenu();
@@ -225,7 +223,7 @@ public class PlayerMoveBuilding3 : MonoBehaviour
     {
         isDead = true;
         //GetComponent<Score>().OnDeath();
-        FindObjectOfType<MainCameraBuilding1>().OnDeath();
+        FindObjectOfType<MainCameraBuilding3>().OnDeath();
         //FindObjectOfType<AudioManager>().Death();
         deathMenu.ToogleEndMenu();
         timerDeathScript.ToggleTimerDeath();

@@ -63,7 +63,30 @@ public class TimerScript : MonoBehaviour
 
     public void End()
     {
-        FindObjectOfType<PlayerMoveBuilding>().timerDeath();
+        try
+        {
+            FindObjectOfType<PlayerMoveBuilding>().timerDeath();
+        }
+        catch
+        {
+            Debug.Log("Not in B1");
+        }
+        try
+        {
+            FindObjectOfType<PlayerMoveBuilding2>().timerDeath();
+        }
+        catch
+        {
+            Debug.Log("Not in B2");
+        }
+        try
+        {
+            FindObjectOfType<PlayerMoveBuilding3>().timerDeath();
+        }
+        catch
+        {
+            Debug.Log("Not in B3");
+        }
         ResetTimer();
     }
 
