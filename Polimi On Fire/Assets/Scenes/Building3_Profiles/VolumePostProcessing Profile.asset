@@ -85,12 +85,12 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   dirtTexture:
-    overrideState: 0
+    overrideState: 1
     value: {fileID: 2800000, guid: d216c5f19f985284d9264896387c6421, type: 3}
     defaultState: 1
   dirtIntensity:
-    overrideState: 0
-    value: 999
+    overrideState: 1
+    value: 500
 --- !u!114 &-2210710984994568180
 MonoBehaviour:
   m_ObjectHideFlags: 3
