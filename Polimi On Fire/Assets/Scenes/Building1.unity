@@ -10561,7 +10561,7 @@ PrefabInstance:
     - target: {fileID: 11449602, guid: 92049b251401dfe4d8e891b130460361, type: 3}
       propertyPath: toggle
       value: 
-      objectReference: {fileID: 221608213}
+      objectReference: {fileID: 221608211}
     - target: {fileID: 11449602, guid: 92049b251401dfe4d8e891b130460361, type: 3}
       propertyPath: flagPass
       value: 1
@@ -10569,7 +10569,7 @@ PrefabInstance:
     - target: {fileID: 11462718, guid: 92049b251401dfe4d8e891b130460361, type: 3}
       propertyPath: toggle
       value: 
-      objectReference: {fileID: 221608213}
+      objectReference: {fileID: 221608211}
     - target: {fileID: 11464288, guid: 92049b251401dfe4d8e891b130460361, type: 3}
       propertyPath: radius
       value: 3.8
@@ -10577,7 +10577,7 @@ PrefabInstance:
     - target: {fileID: 11464288, guid: 92049b251401dfe4d8e891b130460361, type: 3}
       propertyPath: toggle
       value: 
-      objectReference: {fileID: 588067608}
+      objectReference: {fileID: 588067606}
     - target: {fileID: 11467692, guid: 92049b251401dfe4d8e891b130460361, type: 3}
       propertyPath: radius
       value: 8
@@ -10585,7 +10585,11 @@ PrefabInstance:
     - target: {fileID: 11467692, guid: 92049b251401dfe4d8e891b130460361, type: 3}
       propertyPath: toggle
       value: 
-      objectReference: {fileID: 1386978076}
+      objectReference: {fileID: 1386978074}
+    - target: {fileID: 11467692, guid: 92049b251401dfe4d8e891b130460361, type: 3}
+      propertyPath: flagPass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 11489300, guid: 92049b251401dfe4d8e891b130460361, type: 3}
       propertyPath: radius
       value: 7
@@ -10593,7 +10597,7 @@ PrefabInstance:
     - target: {fileID: 11489300, guid: 92049b251401dfe4d8e891b130460361, type: 3}
       propertyPath: toggle
       value: 
-      objectReference: {fileID: 221608213}
+      objectReference: {fileID: 221608211}
     - target: {fileID: 11489300, guid: 92049b251401dfe4d8e891b130460361, type: 3}
       propertyPath: flagPass
       value: 1
@@ -10605,13 +10609,46 @@ PrefabInstance:
     - target: {fileID: 11489770, guid: 92049b251401dfe4d8e891b130460361, type: 3}
       propertyPath: toggle
       value: 
-      objectReference: {fileID: 221608213}
+      objectReference: {fileID: 221608211}
     - target: {fileID: 11489770, guid: 92049b251401dfe4d8e891b130460361, type: 3}
       propertyPath: flagPass
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92049b251401dfe4d8e891b130460361, type: 3}
+--- !u!114 &250562003 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11467692, guid: 92049b251401dfe4d8e891b130460361, type: 3}
+  m_PrefabInstance: {fileID: 250562002}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39ec1892eeb838e4c8baa5e3bab8f7bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &250562004 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11464288, guid: 92049b251401dfe4d8e891b130460361, type: 3}
+  m_PrefabInstance: {fileID: 250562002}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39ec1892eeb838e4c8baa5e3bab8f7bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &250562005 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11462718, guid: 92049b251401dfe4d8e891b130460361, type: 3}
+  m_PrefabInstance: {fileID: 250562002}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39ec1892eeb838e4c8baa5e3bab8f7bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &251021591 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4481949333202216, guid: 8430fd56cfcb15941a1f31ea7f8f1915, type: 3}
@@ -42527,6 +42564,9 @@ MonoBehaviour:
   toggle1: {fileID: 221608211}
   toggle2: {fileID: 588067606}
   toggle3: {fileID: 1386978074}
+  waypoint1: {fileID: 250562005}
+  waypoint2: {fileID: 250562004}
+  waypoint3: {fileID: 250562003}
 --- !u!1001 &1227131958
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49344,6 +49384,7 @@ MonoBehaviour:
   checkList: {fileID: 1226592053}
   pressE: {fileID: 673524871}
   started: 0
+  fireAlarm: {fileID: 1799494602}
   npcPosition: 0
 --- !u!114 &1409679665
 MonoBehaviour:

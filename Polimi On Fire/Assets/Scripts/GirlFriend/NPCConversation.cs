@@ -17,6 +17,7 @@ public class NPCConversation : MonoBehaviour
     public CheckListScript checkList;
     public Image pressE;
     public bool started = false;
+    public FireAlarmScript fireAlarm;
 
     public float npcPosition;
     // Start is called before the first frame update
@@ -32,6 +33,10 @@ public class NPCConversation : MonoBehaviour
         npcPosition = Vector3.Distance(followPlayer.position, npcController.transform.position);
 
         isClose = (Math.Abs(npcPosition) < 5.5);
+        if (!isClose && !fireAlarm.isClose)
+        {
+            pressE.gameObject.SetActive(false);
+        }
         if (isClose && !started)
         {
             pressE.gameObject.SetActive(true);

@@ -131,6 +131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  toggle: {fileID: 0}
+  flagPass: 0
   waypointController: {fileID: 11400000}
   waypointNumber: 5
 --- !u!65 &6565792
@@ -242,6 +244,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  toggle: {fileID: 0}
+  flagPass: 0
   waypointController: {fileID: 11400000}
   waypointNumber: 4
 --- !u!65 &6578136
@@ -353,6 +357,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  toggle: {fileID: 0}
+  flagPass: 0
   waypointController: {fileID: 11400000}
   waypointNumber: 1
 --- !u!65 &6562466
@@ -464,6 +470,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  toggle: {fileID: 0}
+  flagPass: 0
   waypointController: {fileID: 11400000}
   waypointNumber: 3
 --- !u!65 &6582252
@@ -575,6 +583,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  toggle: {fileID: 0}
+  flagPass: 0
   waypointController: {fileID: 11400000}
   waypointNumber: 2
 --- !u!65 &6577058
@@ -686,6 +696,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
+  toggle: {fileID: 0}
+  flagPass: 0
   waypointController: {fileID: 11400000}
   waypointNumber: 6
 --- !u!65 &6578352
