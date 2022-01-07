@@ -1081,7 +1081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 73225a7436772494b8f5edf3ee360a8b, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 1754982dd1af0944d8c1676168286053, type: 2}
   isGlobal: 1
   blendDistance: 0
   weight: 0.414
@@ -1201,6 +1201,10 @@ MonoBehaviour:
   - {fileID: 828707189534994809, guid: 47474d0f76409bf4baccd30c8f63ddfb, type: 3}
   - {fileID: 340907257956530299, guid: 07f02a2a26e3b134097f36e7044dc9b3, type: 3}
   - {fileID: 5409044977312861851, guid: 7c8a9e8721bf89243a1fea46f149d137, type: 3}
+  - {fileID: 5140514280298359683, guid: d619acc0bcbe2ef4692430890865988f, type: 3}
+  - {fileID: 8542045862708822946, guid: 7cc14e7983482f1489bbc52f04cfb59e, type: 3}
+  - {fileID: 2928886012791215596, guid: e8150de90008fcc4e82819ae02e1f4f6, type: 3}
+  - {fileID: 6800505986607727095, guid: fa3adefb2a2600840a1d236c2b55ee1d, type: 3}
   flagForward: 0
   flagLeft: 0
   flagRight: 0
