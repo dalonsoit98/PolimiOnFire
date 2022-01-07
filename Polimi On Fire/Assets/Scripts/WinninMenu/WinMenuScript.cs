@@ -45,6 +45,6 @@ public class WinMenuScript : MonoBehaviour
     public void ToMenu()
     {
         FindObjectOfType<AudioManager>().ButtonPress();
-        SceneManager.LoadScene("ManinMenu");
+        SceneManager.LoadScene("BuildingMenu");
     }
 }

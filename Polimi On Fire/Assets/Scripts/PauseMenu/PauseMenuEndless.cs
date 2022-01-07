@@ -71,6 +71,6 @@ public class PauseMenuEndless : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().MusicStop();
         FindObjectOfType<AudioManager>().ButtonPress();
-        SceneManager.LoadScene("ManinMenu");
+        SceneManager.LoadScene("EndlessMenu");
     }
 }

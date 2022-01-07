@@ -70,6 +70,6 @@ public class PauseMenuBuilding2 : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().MusicStop();
         FindObjectOfType<AudioManager>().ButtonPress();
-        SceneManager.LoadScene("ManinMenu");
+        SceneManager.LoadScene("BuildingMenu");
     }
 }

@@ -46,7 +46,7 @@ public class DeathMenuScript : MonoBehaviour
     public void ToMenu()
     {
         FindObjectOfType<AudioManager>().ButtonPress();
-        SceneManager.LoadScene("ManinMenu");
+        SceneManager.LoadScene("EndlessMenu");
     }
     
     void OnDisable()
