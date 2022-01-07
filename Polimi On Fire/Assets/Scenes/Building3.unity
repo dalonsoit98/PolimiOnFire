@@ -29315,26 +29315,54 @@ PrefabInstance:
       propertyPath: radius
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11449602, guid: 92049b251401dfe4d8e891b130460361, type: 3}
+      propertyPath: toggle
+      value: 
+      objectReference: {fileID: 929758242}
+    - target: {fileID: 11449602, guid: 92049b251401dfe4d8e891b130460361, type: 3}
+      propertyPath: flagPass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 11462718, guid: 92049b251401dfe4d8e891b130460361, type: 3}
       propertyPath: radius
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11462718, guid: 92049b251401dfe4d8e891b130460361, type: 3}
+      propertyPath: toggle
+      value: 
+      objectReference: {fileID: 1702843533}
     - target: {fileID: 11464288, guid: 92049b251401dfe4d8e891b130460361, type: 3}
       propertyPath: radius
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 11464288, guid: 92049b251401dfe4d8e891b130460361, type: 3}
+      propertyPath: toggle
+      value: 
+      objectReference: {fileID: 43929580}
     - target: {fileID: 11467692, guid: 92049b251401dfe4d8e891b130460361, type: 3}
       propertyPath: radius
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 11467692, guid: 92049b251401dfe4d8e891b130460361, type: 3}
+      propertyPath: toggle
+      value: 
+      objectReference: {fileID: 1599909498}
     - target: {fileID: 11489300, guid: 92049b251401dfe4d8e891b130460361, type: 3}
       propertyPath: radius
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11489300, guid: 92049b251401dfe4d8e891b130460361, type: 3}
+      propertyPath: toggle
+      value: 
+      objectReference: {fileID: 1732733111}
     - target: {fileID: 11489770, guid: 92049b251401dfe4d8e891b130460361, type: 3}
       propertyPath: radius
       value: 2.2
       objectReference: {fileID: 0}
+    - target: {fileID: 11489770, guid: 92049b251401dfe4d8e891b130460361, type: 3}
+      propertyPath: toggle
+      value: 
+      objectReference: {fileID: 272541769}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92049b251401dfe4d8e891b130460361, type: 3}
 --- !u!1 &1521757772

@@ -17,6 +17,22 @@ public class NPCConversation2 : MonoBehaviour
     public bool started = false;
 
     public float npcPosition;
+
+    public NPCConversation2 npc1;
+    public NPCConversation2 npc2;
+    public NPCConversation2 npc3;
+    public NPCConversation2 npc4;
+    public NPCConversation2 npc5;
+    public NPCConversation2 npc6;
+    public NPCConversation2 npc7;
+    public NPCConversation2 npc8;
+    public NPCConversation2 npc9;
+    public NPCConversation2 npc10;
+    public NPCConversation2 npc11;
+    public NPCConversation2 npc12;
+    public NPCConversation2 npc13;
+    public NPCConversation2 npc14;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +46,12 @@ public class NPCConversation2 : MonoBehaviour
         npcPosition = Vector3.Distance(followPlayer.position, npcController.position);
 
         isClose = (Math.Abs(npcPosition) < 3.5);
+        if (!npc1.isClose && !npc2.isClose && !npc3.isClose && !npc4.isClose && !npc5.isClose && !npc6.isClose &&
+            !npc7.isClose && !npc8.isClose && !npc9.isClose && !npc10.isClose && !npc11.isClose && !npc12.isClose &&
+            !npc13.isClose && !npc14.isClose)
+        {
+            pressE.gameObject.SetActive(false);
+        }
         if (isClose && !started)
         {
             pressE.gameObject.SetActive(true);

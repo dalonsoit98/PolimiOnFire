@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10558,21 +10558,57 @@ PrefabInstance:
       propertyPath: m_ReflectionProbeUsage
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11449602, guid: 92049b251401dfe4d8e891b130460361, type: 3}
+      propertyPath: toggle
+      value: 
+      objectReference: {fileID: 221608213}
+    - target: {fileID: 11449602, guid: 92049b251401dfe4d8e891b130460361, type: 3}
+      propertyPath: flagPass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11462718, guid: 92049b251401dfe4d8e891b130460361, type: 3}
+      propertyPath: toggle
+      value: 
+      objectReference: {fileID: 221608213}
     - target: {fileID: 11464288, guid: 92049b251401dfe4d8e891b130460361, type: 3}
       propertyPath: radius
       value: 3.8
       objectReference: {fileID: 0}
+    - target: {fileID: 11464288, guid: 92049b251401dfe4d8e891b130460361, type: 3}
+      propertyPath: toggle
+      value: 
+      objectReference: {fileID: 588067608}
     - target: {fileID: 11467692, guid: 92049b251401dfe4d8e891b130460361, type: 3}
       propertyPath: radius
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 11467692, guid: 92049b251401dfe4d8e891b130460361, type: 3}
+      propertyPath: toggle
+      value: 
+      objectReference: {fileID: 1386978076}
     - target: {fileID: 11489300, guid: 92049b251401dfe4d8e891b130460361, type: 3}
       propertyPath: radius
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 11489300, guid: 92049b251401dfe4d8e891b130460361, type: 3}
+      propertyPath: toggle
+      value: 
+      objectReference: {fileID: 221608213}
+    - target: {fileID: 11489300, guid: 92049b251401dfe4d8e891b130460361, type: 3}
+      propertyPath: flagPass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 11489770, guid: 92049b251401dfe4d8e891b130460361, type: 3}
       propertyPath: radius
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11489770, guid: 92049b251401dfe4d8e891b130460361, type: 3}
+      propertyPath: toggle
+      value: 
+      objectReference: {fileID: 221608213}
+    - target: {fileID: 11489770, guid: 92049b251401dfe4d8e891b130460361, type: 3}
+      propertyPath: flagPass
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92049b251401dfe4d8e891b130460361, type: 3}
@@ -45628,7 +45664,7 @@ MonoBehaviour:
   - You know the way, right?
   textSpeed: 0.05
   playerMoveBuilding: {fileID: 549339634}
-  mainCamera: {fileID: 0}
+  mainCamera: {fileID: 957567267}
   dialogueStarted: 0
 --- !u!1001 &1296360181
 PrefabInstance:
