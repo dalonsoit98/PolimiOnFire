@@ -70,10 +70,10 @@ MonoBehaviour:
     value: 3
   threshold:
     overrideState: 1
-    value: 0.9
+    value: 0.6
   softKnee:
     overrideState: 1
-    value: 0.31
+    value: 0.373
   clamp:
     overrideState: 0
     value: 0
@@ -84,18 +84,18 @@ MonoBehaviour:
     overrideState: 1
     value: 1
   color:
-    overrideState: 0
+    overrideState: 1
     value: {r: 1, g: 0.43965724, b: 0.09758736, a: 1}
   fastMode:
     overrideState: 0
     value: 0
   dirtTexture:
-    overrideState: 0
-    value: {fileID: 2800000, guid: d216c5f19f985284d9264896387c6421, type: 3}
+    overrideState: 1
+    value: {fileID: 2800000, guid: 7cac95f5a7676574793c733583f84fb0, type: 3}
     defaultState: 1
   dirtIntensity:
-    overrideState: 0
-    value: 500
+    overrideState: 1
+    value: 15
 --- !u!114 &-3179844892980506496
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -117,7 +117,7 @@ MonoBehaviour:
     value: {x: 54.000046, y: 99}
   minLuminance:
     overrideState: 1
-    value: 0
+    value: -1.2
   maxLuminance:
     overrideState: 1
     value: 9
@@ -169,7 +169,7 @@ MonoBehaviour:
     value: 1
   spectralLut:
     overrideState: 1
-    value: {fileID: 2800000, guid: 08b3912bdc0a5ed4d9a27125425a97f4, type: 3}
+    value: {fileID: 2800000, guid: 7cac95f5a7676574793c733583f84fb0, type: 3}
     defaultState: 1
   intensity:
     overrideState: 1
