@@ -38,28 +38,33 @@ public class ExamsToFindScript : MonoBehaviour
         distance = Vector3.Distance(followPlayer.position, this.transform.position);
 
         isClose = (Math.Abs(distance) < 2.8);
-        
-        if ((!previousToggle.GetComponent<Toggle>().isOn) || !isFirst)
+
+        if ((previousToggle.GetComponent<Toggle>().isOn) || isFirst)
+        {
+
+            if (isClose && !started)
+            {
+                pressE.gameObject.SetActive(true);
+            }
+
+            if (!(examScript1.isClose || examScript2.isClose || examScript3.isClose || publishExam.isClose ||
+                  serverScript.isClose))
+            {
+                pressE.gameObject.SetActive(false);
+            }
+
+            if (isClose && Input.GetKey(KeyCode.E) && !started)
+            {
+                isClose = false;
+                pressE.gameObject.SetActive(false);
+                checkList.actionToggle(id);
+                book.SetActive(false);
+                started = true;
+            }
+        }
+        else
         {
             return;
-        }
-        
-        if (isClose && !started)
-        {
-            pressE.gameObject.SetActive(true);
-        }
-
-        if (!(examScript1.isClose || examScript2.isClose || examScript3.isClose || publishExam.isClose || serverScript.isClose))
-        {
-            pressE.gameObject.SetActive(false);
-        }
-        if (isClose && Input.GetKey(KeyCode.E) && !started)
-        {
-            isClose = false;
-            pressE.gameObject.SetActive(false);
-            checkList.actionToggle(id);
-            book.SetActive(false);
-            started = true;
         }
     }
 }

@@ -40,27 +40,33 @@ public class BookToFind : MonoBehaviour
         distance = Vector3.Distance(followPlayer.position, this.transform.position);
 
         isClose = (Math.Abs(distance) < 2.5);
-        
-        if ((!previousToggle.GetComponent<Toggle>().isOn) || !isFirst)
+
+        if ((previousToggle.GetComponent<Toggle>().isOn) || isFirst)
+        {
+
+            if (isClose && !started)
+            {
+                pressE.gameObject.SetActive(true);
+            }
+
+            if (!(bookScript1.isClose || bookScript2.isClose || bookScript3.isClose || bookScript4.isClose ||
+                  bookScript5.isClose))
+            {
+                pressE.gameObject.SetActive(false);
+            }
+
+            if (isClose && Input.GetKey(KeyCode.E) && !started)
+            {
+                isClose = false;
+                pressE.gameObject.SetActive(false);
+                checkList.actionToggle(id);
+                book.SetActive(false);
+                started = true;
+            }
+        }
+        else
         {
             return;
-        }
-        if (isClose && !started)
-        {
-            pressE.gameObject.SetActive(true);
-        }
-
-        if (!(bookScript1.isClose || bookScript2.isClose || bookScript3.isClose || bookScript4.isClose || bookScript5.isClose))
-        {
-            pressE.gameObject.SetActive(false);
-        }
-        if (isClose && Input.GetKey(KeyCode.E) && !started)
-        {
-            isClose = false;
-            pressE.gameObject.SetActive(false);
-            checkList.actionToggle(id);
-            book.SetActive(false);
-            started = true;
         }
     }
 }
