@@ -71,7 +71,7 @@ public class PlayerMoveBuilding3 : MonoBehaviour
         
         //Timer
         
-        timer1.SetDuration(300).Begin();
+        timer1.SetDuration(420).Begin();
         
         //DeathMenu
         
