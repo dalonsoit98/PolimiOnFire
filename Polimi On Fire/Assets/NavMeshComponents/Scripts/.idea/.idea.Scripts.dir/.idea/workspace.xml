@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="19eed6bc-e7d5-48f1-8757-3134a89afc23" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Scenes/Building1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scenes/Building1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Scenes/Building2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scenes/Building2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Scenes/Building3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scenes/Building3.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Scenes/Building3_Profiles/VolumePostProcessing Profile 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scenes/Building3_Profiles/VolumePostProcessing Profile 2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Scenes/GameplayRun.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scenes/GameplayRun.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../../UserSettings/EditorUserSettings.asset" afterDir="false" />
-    </list>
+    <list default="true" id="19eed6bc-e7d5-48f1-8757-3134a89afc23" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,8 +36,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1641662767027</updated>
-      <workItem from="1641662768206" duration="613000" />
+      <workItem from="1641662768206" duration="670000" />
     </task>
+    <task id="LOCAL-00001" summary="lights for building 3">
+      <created>1641663410632</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1641663410632</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -60,5 +57,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="lights for building 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="lights for building 3" />
   </component>
 </project>
