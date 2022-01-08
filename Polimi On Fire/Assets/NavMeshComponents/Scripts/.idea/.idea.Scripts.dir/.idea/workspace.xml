@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="19eed6bc-e7d5-48f1-8757-3134a89afc23" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Scenes/Building1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scenes/Building1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Scenes/Building2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scenes/Building2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Scenes/Building3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scenes/Building3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Scenes/Building3_Profiles/VolumePostProcessing Profile 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scenes/Building3_Profiles/VolumePostProcessing Profile 2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Scenes/GameplayRun.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../../Scenes/GameplayRun.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../../UserSettings/EditorUserSettings.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/NavMeshSurface.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectId" id="23QOI663N3ig8wHL6zqZqF2yk5x" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="19eed6bc-e7d5-48f1-8757-3134a89afc23" name="Changes" comment="" />
+      <created>1641662767027</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1641662767027</updated>
+      <workItem from="1641662768206" duration="613000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
