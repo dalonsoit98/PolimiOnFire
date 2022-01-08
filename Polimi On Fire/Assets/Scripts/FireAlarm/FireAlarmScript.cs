@@ -13,7 +13,8 @@ public class FireAlarmScript : MonoBehaviour
     public GameObject fireAlarm;
     public GameObject fireAlarm2;
     public float distance;
-
+    public GameObject previousToggle;
+    
     public bool started;
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,10 @@ public class FireAlarmScript : MonoBehaviour
         distance = Vector3.Distance(followPlayer.position, this.transform.position);
 
         isClose = (Math.Abs(distance) < 4);
+        if (!previousToggle.GetComponent<Toggle>().isOn)
+        {
+            return;
+        }
         if (isClose && !started)
         {
             pressE.gameObject.SetActive(true);

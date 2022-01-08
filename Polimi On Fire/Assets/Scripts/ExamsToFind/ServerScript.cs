@@ -19,6 +19,7 @@ public class ServerScript : MonoBehaviour
     public PublishExamScript publishExam;
     public ServerScript serverScript;
 
+    public GameObject previousToggle;
 
     public bool started;
     // Start is called before the first frame update
@@ -34,6 +35,12 @@ public class ServerScript : MonoBehaviour
         distance = Vector3.Distance(followPlayer.position, this.transform.position);
 
         isClose = (Math.Abs(distance) < 2.8);
+        
+        if ((!previousToggle.GetComponent<Toggle>().isOn))
+        {
+            return;
+        }
+        
         if (isClose && !started)
         {
             pressE.gameObject.SetActive(true);

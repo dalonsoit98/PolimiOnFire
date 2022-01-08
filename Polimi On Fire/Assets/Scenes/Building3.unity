@@ -21461,6 +21461,7 @@ MonoBehaviour:
   examScript3: {fileID: 1894035323}
   _publishExamScript: {fileID: 983747532}
   serverScript: {fileID: 1134328155}
+  previousToggle: {fileID: 272541767}
   started: 0
 --- !u!1 &987695201
 GameObject:
@@ -21767,6 +21768,8 @@ MonoBehaviour:
   examScript3: {fileID: 1894035323}
   publishExam: {fileID: 983747532}
   serverScript: {fileID: 1134328155}
+  previousToggle: {fileID: 1702843531}
+  isFirst: 0
   started: 0
 --- !u!1 &991823739
 GameObject:
@@ -24982,6 +24985,7 @@ MonoBehaviour:
   examScript3: {fileID: 1894035323}
   publishExam: {fileID: 983747532}
   serverScript: {fileID: 1134328155}
+  previousToggle: {fileID: 1599909496}
   started: 0
 --- !u!4 &1135825046 stripped
 Transform:
@@ -44225,6 +44229,8 @@ MonoBehaviour:
   examScript3: {fileID: 1894035323}
   publishExam: {fileID: 983747532}
   serverScript: {fileID: 1134328155}
+  previousToggle: {fileID: 43929578}
+  isFirst: 0
   started: 0
 --- !u!4 &1894332352 stripped
 Transform:
@@ -49291,6 +49297,8 @@ MonoBehaviour:
   examScript3: {fileID: 1894035323}
   publishExam: {fileID: 983747532}
   serverScript: {fileID: 1134328155}
+  previousToggle: {fileID: 1702843531}
+  isFirst: 1
   started: 0
 --- !u!4 &2102839018 stripped
 Transform:

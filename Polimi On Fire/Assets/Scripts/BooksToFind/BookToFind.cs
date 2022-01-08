@@ -19,6 +19,10 @@ public class BookToFind : MonoBehaviour
     public BookToFind bookScript3;
     public BookToFind bookScript4;
     public BookToFind bookScript5;
+    
+    public bool isFirst;
+
+    public GameObject previousToggle;
 
 
     public bool started;
@@ -36,6 +40,11 @@ public class BookToFind : MonoBehaviour
         distance = Vector3.Distance(followPlayer.position, this.transform.position);
 
         isClose = (Math.Abs(distance) < 2.5);
+        
+        if ((!previousToggle.GetComponent<Toggle>().isOn) || !isFirst)
+        {
+            return;
+        }
         if (isClose && !started)
         {
             pressE.gameObject.SetActive(true);
