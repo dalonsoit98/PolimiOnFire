@@ -36,7 +36,7 @@ public class PublishExamScript : MonoBehaviour
     {
         distance = Vector3.Distance(followPlayer.position, this.transform.position);
 
-        isClose = (Math.Abs(distance) < 3.2);
+        isClose = (Math.Abs(distance) < 4.5);
         
         if ((!previousToggle.GetComponent<Toggle>().isOn))
         {

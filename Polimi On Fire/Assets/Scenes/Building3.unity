@@ -599,6 +599,83 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b2a4f13248ef214b9e14c5bed331a51, type: 3}
+--- !u!1001 &25216083
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 210488878}
+    m_Modifications:
+    - target: {fileID: 273794692668120244, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a3e2699b324ef5b4f8021e33773d5813, type: 2}
+    - target: {fileID: 273794692668120246, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 273794692668120246, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.81247896
+      objectReference: {fileID: 0}
+    - target: {fileID: 273794692668120246, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0366056
+      objectReference: {fileID: 0}
+    - target: {fileID: 273794692668120246, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8320621
+      objectReference: {fileID: 0}
+    - target: {fileID: 273794692668120246, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -778.64886
+      objectReference: {fileID: 0}
+    - target: {fileID: 273794692668120246, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -536.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 273794692668120246, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.78339
+      objectReference: {fileID: 0}
+    - target: {fileID: 273794692668120246, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 273794692668120246, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 273794692668120246, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 273794692668120246, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 273794692668120246, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 273794692668120246, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 273794692668120246, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 273794692668120250, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
+      propertyPath: m_Name
+      value: publicar la solucion final Fix
+      objectReference: {fileID: 0}
+    - target: {fileID: 273794692668120250, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
 --- !u!4 &25527150 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 429566, guid: 17799333ce080384d8c786992305bf11, type: 3}
@@ -3384,6 +3461,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d513e3e97508a3429bc5eac2b8b7145, type: 3}
+--- !u!1 &137916696 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 273794692668120250, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
+  m_PrefabInstance: {fileID: 25216083}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &137916697 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 273794692668120246, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
+  m_PrefabInstance: {fileID: 25216083}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &137916698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137916696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d7ce323ad2f18408ead776dfedf235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isClose: 0
+  followPlayer: {fileID: 1758102824}
+  checkList: {fileID: 1291929877}
+  pressE: {fileID: 10342168}
+  id: 5
+  distance: 0
+  book: {fileID: 983747530}
+  examScript1: {fileID: 2101920947}
+  examScript2: {fileID: 991160179}
+  examScript3: {fileID: 1894035323}
+  _publishExamScript: {fileID: 137916698}
+  serverScript: {fileID: 1134328155}
+  previousToggle: {fileID: 272541767}
+  started: 0
 --- !u!1001 &138197278
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5279,6 +5392,7 @@ Transform:
   m_LocalPosition: {x: 960, y: 540, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 137916697}
   - {fileID: 983747529}
   - {fileID: 637736668}
   - {fileID: 1894035320}
@@ -21489,7 +21603,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a3e2699b324ef5b4f8021e33773d5813, type: 2}
     - target: {fileID: 273794692668120246, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 273794692668120246, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
       propertyPath: m_LocalScale.x
@@ -21547,6 +21661,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: publicar la solucion final
       objectReference: {fileID: 0}
+    - target: {fileID: 273794692668120250, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
 --- !u!4 &983747529 stripped
@@ -21559,32 +21677,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 273794692668120250, guid: 240014ea57af0a245b99026bcb9ddb31, type: 3}
   m_PrefabInstance: {fileID: 983747528}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &983747532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 983747530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50d7ce323ad2f18408ead776dfedf235, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isClose: 0
-  followPlayer: {fileID: 1758102824}
-  checkList: {fileID: 1291929877}
-  pressE: {fileID: 10342168}
-  id: 5
-  distance: 0
-  book: {fileID: 983747530}
-  examScript1: {fileID: 2101920947}
-  examScript2: {fileID: 991160179}
-  examScript3: {fileID: 1894035323}
-  _publishExamScript: {fileID: 983747532}
-  serverScript: {fileID: 1134328155}
-  previousToggle: {fileID: 272541767}
-  started: 0
 --- !u!1 &987695201
 GameObject:
   m_ObjectHideFlags: 0
@@ -21808,7 +21900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 497894, guid: 838c8aac0dbaa7a44b4bef0e366bc1f9, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 497894, guid: 838c8aac0dbaa7a44b4bef0e366bc1f9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21888,7 +21980,7 @@ MonoBehaviour:
   examScript1: {fileID: 2101920947}
   examScript2: {fileID: 991160179}
   examScript3: {fileID: 1894035323}
-  publishExam: {fileID: 983747532}
+  publishExam: {fileID: 137916698}
   serverScript: {fileID: 1134328155}
   previousToggle: {fileID: 1702843531}
   isFirst: 0
@@ -25063,7 +25155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4481949333202216, guid: 8430fd56cfcb15941a1f31ea7f8f1915, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4481949333202216, guid: 8430fd56cfcb15941a1f31ea7f8f1915, type: 3}
       propertyPath: m_LocalScale.x
@@ -25162,7 +25254,7 @@ MonoBehaviour:
   examScript1: {fileID: 2101920947}
   examScript2: {fileID: 991160179}
   examScript3: {fileID: 1894035323}
-  publishExam: {fileID: 983747532}
+  publishExam: {fileID: 137916698}
   serverScript: {fileID: 1134328155}
   previousToggle: {fileID: 1599909496}
   started: 0
@@ -44584,7 +44676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b455db4ef87aeab418547683a551c3a9, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b455db4ef87aeab418547683a551c3a9, type: 3}
       propertyPath: m_LocalScale.x
@@ -44672,7 +44764,7 @@ MonoBehaviour:
   examScript1: {fileID: 2101920947}
   examScript2: {fileID: 991160179}
   examScript3: {fileID: 1894035323}
-  publishExam: {fileID: 983747532}
+  publishExam: {fileID: 0}
   serverScript: {fileID: 1134328155}
   previousToggle: {fileID: 43929578}
   isFirst: 0
@@ -49876,7 +49968,7 @@ Transform:
   m_LocalScale: {x: 2.9868002, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 210488878}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -91.592}
 --- !u!114 &2101920947
 MonoBehaviour:
@@ -49900,7 +49992,7 @@ MonoBehaviour:
   examScript1: {fileID: 2101920947}
   examScript2: {fileID: 991160179}
   examScript3: {fileID: 1894035323}
-  publishExam: {fileID: 983747532}
+  publishExam: {fileID: 137916698}
   serverScript: {fileID: 1134328155}
   previousToggle: {fileID: 1702843531}
   isFirst: 1
